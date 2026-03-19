@@ -55,36 +55,6 @@
     \warn{\item Invalid format of field 'urldate'}
   \endentry
 
-  \entry{Ene_2021}{article}{}{}
-    \name{author}{2}{}{%
-      {{hash=EA}{%
-         family={Ene},
-         familyi={E\bibinitperiod},
-         given={A},
-         giveni={A},
-      }}%
-      {{hash=TC}{%
-         family={Teodosiu},
-         familyi={T\bibinitperiod},
-         given={C},
-         giveni={C},
-      }}%
-    }
-    \strng{namehash}{EATC1}
-    \strng{fullhash}{EATC1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{E}
-    \field{sortinithash}{E}
-    \field{number}{1}
-    \field{title}{Studies dealing with defogging and de-icing phenomena on
-  vehicles’ windshield: a review}
-    \field{volume}{664}
-    \field{journaltitle}{IOP Conference Series: Earth and Environmental
-  Science}
-    \field{year}{2021}
-  \endentry
-
   \entry{digiESP.2023}{online}{}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{E}
@@ -181,20 +151,6 @@
     \verb https://www.ibm.com/de-de/think/topics/microcontroller
     \endverb
     \field{year}{2025}
-    \warn{\item Invalid format of field 'urldate'}
-  \endentry
-
-  \entry{SenReich.2024}{online}{}{}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{note}{(zuletzt geprüft: 14.12.2025)}
-    \field{title}{Wie Sensoren die Reichweite von E-Autos steigern}
-    \verb{url}
-    \verb https://www.all-electronics.de/e-mobility-reichweite/wie-sensoren-die
-    \verb -reichweite-von-e-autos-steigern/794568
-    \endverb
-    \field{year}{2024}
     \warn{\item Invalid format of field 'urldate'}
   \endentry
 \enddatalist
