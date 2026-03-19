@@ -1,0 +1,210 @@
+%!TEX root = ../dokumentation.tex
+\chapter{Gebrauchsanleitung}
+
+Bitte diese Anleitung durchlesen. \\
+
+Um diese Anleitung in der eigentlichen Arbeit auszublenden, kommentieren Sie bitte die anleitung.tex (und das \textbackslash newpage) in der dokumentation.tex aus. \\
+\textbf{Mit dem auskommentieren der Anleitung startet die Vorlage bei 01kapitel.tex (momentan Kapitel 4 'Einleitung').}
+
+\section{Übersicht über die Vorlage}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabularx}{\textwidth}{lX}
+        \textbf{Dateiname} & \textbf{Beschreibung} \\\toprule
+        \texttt{dokumentation.tex} & Die Hauptdatei. Alle anderen Dateien werden von dieser Datei eingezogen. \textbf{Hier Hinzufügen / Löschen von Frontmatter!} \\
+        \texttt{abstract.tex} & Die Kurzfassung der Arbeit. \\    
+        \texttt{header.tex} & Konfigurationseinstellungen der einzelnen Pakete \\
+        \texttt{acronyms.tex} & Definition von Abkürzungen. \\
+        \texttt{acknowledgement.tex} & Danksagung (Für Bachelorarbeit) \\
+        \texttt{deckblatt.tex} & Titelseite der Arbeit. \\
+        \texttt{anleitung.tex} & Diese Anleitung \\ 
+        \texttt{bibliography.bib bzw. quellen.bib} & Die Literaturdatenbank -- hier können Sie die verwendete Literatur einpflegen. Eine davon verwenden.\\
+        \texttt{erklaerung.tex} & Eidesstattliche Erklärung.\\
+        \texttt{formatting.tex} & Befehle für Fachbegriffe und Code (Code =! Listing). \\
+        \texttt{gender\_erklaerung.tex} & Gendererklärung falls benötigt. \\
+        \texttt{bibliography.bib} & Die Literaturdatenbank -- hier können Sie die verwendete Literatur einpflegen.\\
+        \texttt{glossary.tex} & Glossar für Fachbegriffe. \\
+        \texttt{einstellungen.tex} & Relevante Einstellungen werden hier gesetzt. Dazu zählen z.B. Informationen über Autor oder Formatierung. \textbf{Bitte Anpassen!} \\
+        \texttt{appendix.tex} & Anhang bzw. Anhänge \\\bottomrule
+    \end{tabularx}
+    \caption{\label{tab:dateien}Übersicht über die Dateien der Vorlage}
+\end{table}
+
+
+\section{Übersetzung von \LaTeX-Dateien}
+Die Übersetzung von \LaTeX-Dateien erfolgt in mehreren Schritten und unter der Zuhilfenahme unterschiedlicher Programme. Das Hauptdokument (hier die Datei \texttt{dokumentation.tex}) wird mittels \texttt{pdflatex} zu einem PDF übersetzt. Ggf. ist eine mehrfache Übersetzung notwendig, um z.\,B. das Inhaltsverzeichnis korrekt darzustellen. 
+
+\section{Verwendung von Akronymen}
+Akronyme müssen in der Datei \texttt{acronyms.tex} definiert werden (schauen Sie sich hierzu bitte die entsprechende Paket-Dokumentation an!)
+Ein definiertes Akronym kann dann mit dem Befehl \texttt{\textbackslash ac} verwenden, so wird z.\,B. \texttt{\textbackslash ac\{DHBW\}} zu \ac{DHBW}. Im weiteren Verlauf wird das 
+Acronym dann nur noch in der Kurzform dargestellt: \ac{DHBW}. Die Aufnahme eines verwendeten Akronyms in das Abkürzungsverzeichnis erfolgt automatisch.
+
+\section{Zitieren von Quellen}
+In  der LaTeX-Vorlage wird mit \texttt{\textbackslash citeM{}{}{}{}} zitiert. Die erste Klammer gibt an, ob es sich um ein direktes (d) oder indirektes (i) Zitat handelt. Die zweite Klammer ist für das Schlüsselwort des Zitats vorgesehen. Die dritte und vierte Klammer sind für die Seitenzahlen.
+
+
+Soll einer Abbildung eine Quellenangabe zugefügt werden, bietet es sich an, diese direkt in der jeweiligen Abbildungsbeschriftung zu hinterlegen. Hierfür wird auch der Befehl \texttt{\textbackslash citeM} verwendet. Vor dem Zitat wird noch ein \texttt{\textbackslash protect} gesetzt, da es teilweise sonst Probleme mit der Formatierung geben kann.
+
+
+\section{Text in Anführungszeichen}
+Soll ein Text in Anführungszeichen gesetzt werden, kann dies über den Befehl \texttt{\textbackslash enquote} \enquote{so erreicht werden}. Die Anführungszeichen ändern sich automatisch auf die 
+jeweiligen Länderspezifika, wenn die Spracheinstellung des \texttt{babel}-Pakets geändert wird. Voreinstellung ist die deutsche Verwendung von 
+Anführungszeichen.
+
+\section{Verweis von Tabellen / Abbildungen / Kapiteln usw}
+
+ Sobald man ein \texttt{\textbackslash label} gesetzt hat, kann mit \texttt{\textbackslash autoref} auf ein z.B. Kapitel, Abbildung, Tabelle, Kapitel uvm. referenziert werden.
+
+
+
+
+\section{Beispiele}
+
+
+\subsection{Unterabschnitte}
+Es gibt neben \texttt{\textbackslash chapter} auch noch  \texttt{\textbackslash section}, \texttt{\textbackslash subsection}, \texttt{\textbackslash subsubsection} etc. Eine zu starke Untergliederung des Textes sollte jedoch vermieden werden (z.\,B. ein Abschnitt 3.4.2.5.3). 
+
+\subsection{Tabellen und Abbildungen}
+Tabellen und Abbildungen sind sogenannte \textit{Floating Objects}, d.\,h. \LaTeX\ setzt diese Objekte an Positionen, die satztechnisch geeignet sind. Daher kann es vorkommen, dass Tabellen oder Abbildungen auf einer anderen Seite erscheinen, die dann referenziert werden müssen. Hier ein Beispiel dafür: 
+
+In \autoref{tab:tabelle1} ist eine Tabelle abgebildet, die mit dem Befehl \texttt{\textbackslash vref} referenziert wurde. Gleiches kann man auch mit Abbildungen 
+machen, wie z.\,B. mit der \autoref{fig:test}. \LaTeX~ kümmert sich darum, wo die Abbildungen gesetzt werden und passt den Text der Referenz entsprechend an. Soll nur die Nummerierung in den Text geschrieben werden, dann kann auch der Befehl \texttt{\textbackslash ref} verwendet werden.
+Abbildungen sollten -- falls möglich -- als Vektor-PDF eingebunden 
+werden, da die diese dann beliebig skalieren können.
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{p{3cm}crl}
+		\textbf{Spalte 1} & \textbf{Spalte 2} & \textbf{Spalte 3} & \textbf{Spalte 4}\\\toprule
+		Zeile 1 Spalte 1 &  Zeile 1 Spalte 2 & Zeile 1 Spalte 3 & Zeile 1 Spalte 4\\
+		Zeile 2 Spalte 2 &  Zeile 2 Spalte 2 & Zeile 2 Spalte 3 & Zeile 2 Spalte 4\\\midrule
+		Zeile 3 Spalte 1 &  Zeile 3 Spalte 2 & Zeile 3 Spalte 3 & Zeile 3 Spalte 4\\
+		Zeile 4 Spalte 1 &  Zeile 4 Spalte 2 & Zeile 4 Spalte 3 & Zeile 4 Spalte 4\\\bottomrule
+	\end{tabular}
+	\caption[Testtabelle]{\label{tab:tabelle1}Testtabelle}
+\end{table}
+
+Eine andere Art einer Tabelle kann z.B. so aussehen: 
+\begin{table}[h!]
+	\centering
+	\begin{tabularx}{\textwidth}{|l|X|X|}
+		\hline
+		\textbf{Zeile / Spalte 1} & \textbf{Spalte 2} & \textbf{Spalte 3} \\
+		\hline
+		\textbf{Zeile 1} & 1 & 2 \\ \hline
+		\textbf{Zeile 2} & 1 & 2  \\ \hline
+		\textbf{Zeile 3} & 1 & 2  \\ \hline
+		\textbf{Zeile 4} & 1 & 2  \\ \hline
+		\textbf{Zeile 5} & 1 & 2  \\ \hline
+	\end{tabularx}
+	\caption{Das hier ist eine Caption \protect\citeM{i}{Online.2022}{}{}}
+	\label{tab:label1}
+\end{table}
+
+\subsection{Listings}	
+
+Das Einbinden eines Listings mit der entsprechenden Umgebung ist auch kein Problem, wie man in \autoref{lst:helloworld} sehen kann. Schauen Sie sich hierzu das \texttt{listings}-Paket an! 
+		
+\lstset{language=Java}
+\begin{lstlisting}[caption={Hello World!}, label={lst:helloworld}]
+public static void main(String args[]) {
+   System.out.println("Hello World!");
+}
+\end{lstlisting}
+
+\subsection{Mathematische Formeln}
+Auch mathematische Ausdrücke können mit \LaTeX~ sehr gut gesetzt werden, wie man anhand der \autoref{eqn:e1} und \autoref{eqn:e2} sehen kann -- konsultieren Sie hierzu bitte entsprechende Dokumentationen, die Online zur Verfügung stehen.
+\begin{equation}
+\left|{1\over N}\sum_{n=1}^N \gamma(u_n)-{1\over 2\pi}\int_0^{2\pi}\gamma(t){\rm d}t\right| \le {\varepsilon\over 3}.\\
+\label{eqn:e1}
+\end{equation}
+
+\begin{equation}
+f(x)=x^2
+\label{eqn:e2}
+\end{equation}
+
+Eine Formel kann in dieser Vorlage aber auch ohne das \texttt{\textbackslash beginEquation} dargestellt werden:
+
+\[Z= \sin(\sqrt{X^2 + Y^2})\] 
+
+oder so:
+
+\[
+\begin{array}{cc}
+\text{heaviside}(z) = 
+\begin{cases} 
+0 & \text{wenn } z < 0 \\ 
+1 & \text{wenn } z \geq 0 
+\end{cases}
+&
+\text{sgn}(z) = 
+\begin{cases} 
+-1 & \text{wenn } z < 0 \\ 
+0 & \text{wenn } z = 0 \\ 
++1 & \text{wenn } z > 0 
+\end{cases}
+\end{array}
+\]
+
+\section{Glossar}
+
+Ein Glossareintrag wird mit \gls{Beispielglossar} eingefügt und muss davor in ads/glossary.tex eingefügt werden.
+
+\chapter{Grundladen von \LaTeX}
+
+\begin{itemize}
+	\item Dies
+	\item ist
+	\item eine
+	\item Auflistung 
+\end{itemize}
+------------------------
+\begin{enumerate}
+    \item Dies
+    \item ist
+    \item eine
+    \item Nummerierung
+\end{enumerate} 
+---------------------------\\
+\emph{Dieser Text ist kursiv}\\
+\textbf{Dieser Text ist fett}\\
+
+Ein '\textbackslash \textbackslash'  sorgt für ein Textumbruch.
+
+Ein \textbackslash {chapter} leitet ein neues Kapitel ein. \textbackslash {section} sorgt für ein Unterkapitel und \textbackslash {subsection} sorgt für ein Kapitel x.x.x.
+
+\section{Abbildung mit Quelle}
+
+\begin{figure}[h!]
+	\centering
+	\resizebox{.9\textwidth}{!}{%
+		\includegraphics[trim={0 1.5cm 0 0.5cm},clip]{images/dhbw.png}
+	}
+	\vspace{10pt}
+	\caption[Beliebtheit von Machine Learning Frameworks unter Data Scientists im Jahr 2020]{Beliebtheit von Machine Learning Frameworks unter Data Scientists im Jahr 2020 \protect\citeM{i}{Online.2022}{22}{28}}\label{fig:kaggleDataScienceReport}
+\end{figure}
+
+\chapter{Aufbau einer wissenschaftlichen Arbeit}
+
+Eine wissenschaftliche Arbeit folgt einem klar strukturierten Aufbau, der es dem Leser ermöglicht, die Forschungsergebnisse nachvollziehen und bewerten zu können. Im Folgenden wird der typische Aufbau einer wissenschaftlichen Arbeit beschrieben:
+
+\section{Einleitung}
+Die Einleitung stellt das Thema der Arbeit vor, erläutert die Fragestellung und die Zielsetzung der Forschung. Zudem wird der Aufbau der Arbeit kurz skizziert.
+
+\section{Theoretischer Hintergrund}
+In diesem Kapitel wird der theoretische Rahmen der Arbeit dargelegt. Es werden relevante Theorien, Modelle und Literatur vorgestellt, die für das Verständnis der Forschung notwendig sind.
+
+\section{Methodik}
+Hier wird die Vorgehensweise der Forschung beschrieben. Dies umfasst die Beschreibung der Datenerhebungsmethoden, der Stichprobe, der Instrumente und der Datenanalyseverfahren.
+
+\section{Ergebnisse}
+In diesem Kapitel werden die Ergebnisse der Forschung präsentiert. Die Darstellung erfolgt meist in Form von Text, Tabellen und Abbildungen.
+
+\section{Fazit}
+Das Fazit fasst die wichtigsten Erkenntnisse der Arbeit zusammen und gibt einen Ausblick auf die Relevanz der Ergebnisse.
+
+\section{Literaturverzeichnis}
+Das Literaturverzeichnis listet alle Quellen auf, die in der Arbeit zitiert wurden. Die Quellenangaben sollten nach einem einheitlichen Zitierstil erfolgen.

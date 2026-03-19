@@ -1,0 +1,12 @@
+%!TEX root = ../dokumentation.tex
+
+\addchap{Formatierungen}
+
+\newcommand{\fachbegriff}[1]{\emph{#1}}
+\fachbegriff{Diese Formatierung gibt an, dass es sich um einen Fachbegriff handelt}\\
+\newcommand{\code}[1]{{\fontfamily{pcr}\selectfont #1}}
+\code{Diese Formatierung gibt an, dass es sich um einen Codeausschnitt handelt}
+
+% Um die Formatierungen oben vor Kapitel 1 wieder einzublenden:
+% 1. die beiden newcommand Befehle ganz unten aus header.tex löschen / auskommentieren
+% 2. in dokumentation.tex muss dann noch die formatierung und die beiden cleardoublepage wieder auskommentiert werden

@@ -1,0 +1,32 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{\nonumberline Abkürzungsverzeichnis}{IV}{chapter*.4}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{V}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Theorieteil}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Mikrocontroller}{2}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Was ist ein Mikrocontroller?}{2}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Besonderheiten des ESP32}{2}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Der DHT11 Sensor}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Kommunikation und OSI-Modell}{3}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Physikalische Schicht / Bitübertragungsschicht}{3}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Datenverbindungsschicht / Sicherungsschicht}{4}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Netzwerkschicht / Vermittlungsschicht}{4}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Transportschicht}{4}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Applikationsschicht}{5}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}Stand der Technik}{5}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Aktuelle Methoden zum Defogging}{5}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Temperatur und Feuchtigkeitssensoren}{6}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Umsetzung}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Planung und Aufbau}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Durchführung}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Messreihe zur Genauigkeit des DHT11 Sensors}{8}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Theoretische Implementierung zum Defogging}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Kritische Betrachtung und Lösungsansätze}{10}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Lösungsansatz 1: Aktivierung nur beim Ladevorgang}{10}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Lösungsansatz 2: Intelligentes Defogging}{11}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Lösungsansatz 3: Ferngesteuertes Defogging}{11}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {4}Fazit und Ausblick}{12}{chapter.4}%
+\contentsline {chapter}{\nonumberline Literatur}{13}{chapter*.16}%
+\contentsline {chapter}{\nonumberline Anhang}{14}{chapter*.17}%
+\contentsline {section}{A. Code}{15}{Item.2}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

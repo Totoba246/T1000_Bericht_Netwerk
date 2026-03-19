@@ -1,0 +1,193 @@
+%!TEX root = ../dokumentation.tex
+
+\chapter{Theorieteil}
+
+\section{Mikrocontroller}
+\subsection{Was ist ein Mikrocontroller?}
+Eine \ac{MCU} ist ein kleiner Computer, bestehend aus nur einem Chip. 
+Sie wurden speziell dafür entwickelt, um Aufgaben in Systemen zu übernehmen, 
+ohne dafür ein komplexes Betriebssystem zu 
+benötigen. 
+
+Er enthält einen Prozessor, Arbeitsspeicher und einen programmierbaren 
+Speicher (\ac{EEPROM}) sowie Ein- und Ausgabeschnittstellen.
+Im Gegensatz zu Mikroprozessoren benötigt ein Mikrocontroller keine weiteren externen Komponenten.
+Außerdem sind sie optimiert für die Steuerung von Sensoren oder Motoren\citeM{i}{ibmMikro}{}{}.
+
+
+
+\subsection{Besonderheiten des ESP32}
+Der ESP32 ist ein leistungsfähiger Mikrocontroller und der Nachfolger des ESP8266 von Espressif.
+Er verfügt über einen Dual-Core 32-Bit Prozessor mit zwei Kernen, 
+was ihn besonders schnell macht. 
+
+WLAN gehört zu seinen Kernfunktionen. Der ESP32 kann sich mit WLAN-Netzwerken 
+verbinden und zusätzlich ein eigenes WLAN-Netzwerk (Access Point) aufbauen, 
+beispielsweise als kleiner Webserver. 
+Zudem unterstützt er Bluetooth, was ihn für Smart-Home- und \ac{IoT}-Anwendungen ideal macht.
+
+Der Mikrocontroller überzeugt auch durch einen sehr geringen Stromverbrauch, 
+der im Deep-Sleep-Modus je nach Board unter 0,1 mA liegen kann, was ihn besonders 
+für energieeffiziente \ac{IoT}-Projekte prädestiniert.
+
+Der ESP32 ist robust und kann in einem Temperaturbereich von -40 °C bis +125 °C 
+zuverlässig betrieben werden.
+
+Entwicklungsboards sind so aufgebaut, dass sie neben solchen Modulen auch die 
+notwendige Versorgung und Anschlüsse bereitstellen, 
+um die vielfältigen Funktionen des ESP32 einfach nutzen zu können
+\citeM{i}{digiESP.2023}{}{}.
+
+\section{Der DHT11 Sensor}
+Der DHT11 Sensor ist in der Lage, Temperatur und Luftfeuchtigkeit zu messen.
+
+Zum Messen der Temperatur hat der DHT11 ein Negative Temperature Coefficient
+Thermistor. Dabei handelt es sich um einen Widerstand, welcher geringer wird je höher die 
+Temperatur ist, da die Leitfähigkeit des Materials zunimmt.
+
+Für die Luftfeuchtigkeit ist ein Kondensator in den DHT11 eingebaut. Dieser besteht 
+aus zwei Elektroden, zwischen diesen 
+befindet sich ein flüssigkeitsempfindliches Substrat. Je höher die 
+Luftfeuchtigkeit ist, desto mehr Kapazität besitzt dieses Substrat.
+
+Aus diesen Daten ermittelt der Sensor die tatsächlichen Werte durch eine Kalibrierung, 
+welche durch den Hersteller vorgenommen wurde.
+
+Er ist in der Lage Temperaturen von 0°C bis 50°C bei einer Messgenauigkeit von  $\pm$ 2,0°C
+zu erfassen 
+die Luftfeuchtigkeit kann im Bereich von 20\% bis 90\% gemessen werden, 
+wobei die Messgenauigkeit $\pm$ 5\% beträgt \citeM{i}{HammLipp.2023}{}{}.
+
+\section{Kommunikation und OSI-Modell}
+
+Das \ac{OSI}-Modell ist ein konzeptionelles Schichtenmodell 
+zur Standardisierung der Netzwerkkommunikation. Es teilt die Kommunikation in 7
+klar abgegrenzte abstrakte Ebenen ein, die jeweils spezifische Funktionen erfüllen und 
+miteinander über definierte Schnittstellen interagieren \citeM{i}{ibmOSI}{}{}.
+In vielen Fällen wird das \ac{OSI}-Modell auch vereinfacht mit 5 Schichten dargestellt wird, wobei die
+Funktionen der Sitzungsschicht, Darstellungsschicht und Anwendungsschicht
+in einer einzigen Anwendungsschicht zusammengefasst werden \citeM{i}{kappes:2013}{}{}.
+
+
+Die sieben Schichten sind:
+
+\subsection{Physikalische Schicht / Bitübertragungsschicht}
+
+\enquote{Die physikalische Schicht regelt, wie die Bits zwischen miteinander direkt 
+verbundenen Stationen physikalisch übertragen werden.}
+\citeM{d}{kappes:2013}{130}{130}. Die physikalischen Medien sind Stecker, Router, Kabel 
+sowie aber auch WLAN \citeM{i}{ibmOSI}{1}{1}, welches in diesem Projekt die Bits 
+vom ESP32 auf das Mobiltelefon
+überträgt.
+
+
+\subsection{Datenverbindungsschicht / Sicherungsschicht}
+
+Diese Schicht liegt über der Physikalischen Schicht. Ihre Hauptaufgabe besteht darin, 
+den Datenaustausch zweier miteinander verbundenen Geräte fehlerfrei ablaufen zu lassen.
+
+\enquote{ Die auf 
+dieser Schicht übertragenen Informationseinheiten werden auch Datenrahmen 
+(kurz: Rahmen) oder Frames genannt}\citeM{d}{kappes:2013}{130}{130}.Aufgrund der
+ physikalischen Eigenschaften des verwendeten Übertragungsmediums sowie weiterer 
+ technischer Faktoren sind diese Rahmen häufig in ihrer Länge eingeschränkt oder 
+ müssen eine bestimmte Mindestgröße besitzen 
+ \citeM{i}{kappes:2013}{130}{130}.
+
+Die Sicherungsschicht steuert, wer wann senden darf (Zugriffssteuerung) und 
+erkennt Übertragungsfehler, um Korrekturmaßnahmen einzuleiten \citeM{i}{ibmOSI}{}{}.
+
+\subsection{Netzwerkschicht / Vermittlungsschicht}
+Aufgabe dieser Schicht ist das Routing, also das Weiterleiten der Datenpakete 
+innerhalb eines Netzwerks. Auf dieser Schicht werden die Daten "Pakete" genannt.
+Falls nötig werden die Pakete hier fragmentiert, also in kleinere Pakete zerlegt,
+falls es nötig sein sollte \citeM{i}{kappes:2013}{130}{130}.
+
+\subsection{Transportschicht}
+
+Diese Schicht stellt die zuverlässige Ende-zu-Ende-Kommunikation sicher und 
+segmentiert größere Datenströme. Sie verwendet typischerweise Protokolle wie 
+TCP und UDP:
+
+\ac{TCP}: Verbindungsorientiert, garantiert fehlerfreie und geordnete 
+Datenübertragung. Wichtig, wenn Datenverlust oder Reihenfolge vermieden werden muss.
+
+\ac{UDP}: Verbindungslos, schneller, aber ohne Garantie für Zustellung oder 
+Reihenfolge. Geeignet, wenn Geschwindigkeit wichtiger ist als absolute
+Zuverlässigkeit.
+
+
+\subsection{Applikationsschicht}
+
+Sitzungsschicht: 
+Verwalten von Kommunikationssitzungen 
+zwischen Anwendungen, einschließlich Aufbau, 
+Verwaltung und Beendigung von Verbindungen \citeM{i}{ibmOSI}{}{}.
+
+Darstellungsschicht:
+Zuständig für die Übersetzung 
+und Formatierung von Daten, Verschlüsselung sowie Datenkompression, damit die Daten 
+von der Anwendungsschicht verstanden werden können. Unterstützt z. B. SSL/TLS zur 
+sicheren Datenübertragung \citeM{i}{ibmOSI}{}{}.
+
+Anwendungsschicht:
+Die oberste Schicht, die direkt mit Softwareanwendungen interagiert. Sie stellt 
+Protokolle bereit für Dienste wie E-Mail (SMTP), Dateiübertragung (FTP) oder 
+Webzugriff (HTTP). Im Projekt könnten hier Protokolle wie MQTT zur 
+Sensordatenübertragung eingesetzt werden \citeM{i}{ibmMikro}{}{}.
+
+
+\section{Stand der Technik}
+
+\subsection{Aktuelle Methoden zum Defogging}
+
+Der Beschlag von Fahrzeugscheiben ist eine sicherheitskritische Folge der 
+Kondensation von Wasserdampf auf kühleren Glasoberflächen; als Phasenwechselprozess 
+erfordert seine Beseitigung zusätzliche Energie und beeinflusst Fahrkomfort und Sicht 
+maßgeblich. Besonders in Elektrofahrzeugen erhöht der 
+Betrieb des \ac{HVAC}-Systems den Energiebedarf deutlich und kann die Reichweite um bis zu 
+etwa 13\% reduzieren, weshalb effiziente Defoggingstrategien zentral sind 
+\citeM{i}{Ene_2021}{1}{2}.
+
+Der Stand der Technik umfasst drei primäre Verfahren: (1) Erwärmte und gerichtete 
+Luftzufuhr über das HVAC-System zur Trocknung der Grenzschicht an der 
+Windschutzscheibe, (2) elektrische Widerstandsheizungen im Verbundglas 
+zur schnellen lokalen Erwärmung und (3) den Einsatz der Klimaanlage zur 
+Luftentfeuchtung durch Abkühlung unter Taupunkt mit anschließender Erwärmung der 
+Zuluft; Hybridlösungen kombinieren Luftführung und elektrische Heizer, um Wirkung 
+und Energieeinsatz auszubalancieren \citeM{i}{Ene_2021}{1}{2}.
+
+Nach EU-Richtlinie 78/317/EWG muss im Sichtfeld vor dem Fahrenden ein Bereich A 
+innerhalb von 10 Minuten zu 90\% entnebelt sein; ein größerer Bereich B ist 
+innerhalb von 10 Minuten zu 80\% zu entnebeln; ähnliche Vorgaben existieren
+in Australien und den USA (FMVSS 103) \citeM{i}{Ene_2021}{2}{2}.
+
+
+
+\subsection{Temperatur und Feuchtigkeitssensoren}
+
+Neben dem DHT11 existieren zahlreiche weitere Sensoren zur Messung 
+von Temperatur und Luftfeuchtigkeit. Der DHT22 stellt das Nachfolgermodell
+des DHT11 dar und bietet einen erweiterten und genaueren Messbereich.
+\enquote{Der Temperaturmessbereich reicht von 
+-40°C bis 80°C und der Messbereich der Luftfeuchtigkeit reicht von 0\% bis 100\% 
+mit einer Genauigkeit bzw. Abweichung von ±0,5°C und ±2-5\%}  
+\citeM{d}{kompDHT22}{}{}.
+
+Alternativ können standardisierte Widerstandsthermometer
+wie Pt100 oder Ni100 eingesetzt werden. Diese Sensoren besitzen deutlich 
+größere Messbereiche  (Ni100: -60°C bis 180°C, 
+Pt100: -200°C bis zu 850°C) \citeM{i}{bernstein:2013}{233}{236}.
+Für das präventive Defogging in Fahrzeugen ist dieser große Bereich jedoch 
+nicht notwendig, da lediglich Innen- und Außentemperaturen relevant sind. 
+Zudem erfassen diese Sensoren ausschließlich die Temperatur, weshalb zur 
+Bestimmung des Taupunkts ein zusätzlicher Feuchtigkeitssensor erforderlich 
+wäre.
+
+Der DHT11 ist daher für die Anwendung am besten geeignet. Sein Messbereich 
+entspricht den typischen Werten, die in Taupunkttabellen (\autoref{Ausschnitt_Taupunkttabelle})
+verwendet werden.
+Diese Tabellen zeigen die Temperatur an, bei der Kondensation entsteht, 
+abhängig von Lufttemperatur und relativer Luftfeuchtigkeit. Relevante 
+Temperaturwerte liegen meist zwischen 2°C und 50°C,
+die Feuchtigkeit zwischen 45\% und 95\%.

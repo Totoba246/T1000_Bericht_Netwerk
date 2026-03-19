@@ -1,0 +1,27 @@
+%!TEX root = ../dokumentation.tex
+
+\pagestyle{empty}
+
+\iflang{de}{%
+% Dieser deutsche Teil wird nur angezeigt, wenn die Sprache auf Deutsch eingestellt ist.
+\renewcommand{\abstractname}{\langabstract} % Text für Überschrift
+
+% \begin{otherlanguage}{english} % auskommentieren, wenn Abstract auf Deutsch sein soll
+\begin{abstract}
+Deutscher Abstract
+    
+\end{abstract}
+% \end{otherlanguage} % auskommentieren, wenn Abstract auf Deutsch sein soll
+}
+
+
+
+\iflang{en}{%
+% Dieser englische Teil wird nur angezeigt, wenn die Sprache auf Englisch eingestellt ist.
+\renewcommand{\abstractname}{Abstract} % Text für Überschrift
+
+\begin{abstract}
+Englischer Abstract
+    
+\end{abstract}
+}

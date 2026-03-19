@@ -1,0 +1,159 @@
+% !TeX root = ../dokumentation.tex
+
+\addchap{\langanhang}
+
+ 
+{\Large
+\begin{enumerate}[label=\Alph*.]
+	\item Code 
+	\item Abbildungen
+
+\end{enumerate}
+}
+\pagebreak
+\*{A. Code}
+\addcontentsline{toc}{section}{A. Code}
+Der verwendete Code zum Auslesen der DHT11 Sensoren mit dem ESP32 und zum anzeigen der Messwerte auf einer Website.
+\lstset{language=c++}
+\begin{lstlisting}[caption={Code zur Auslesung des DHT11 Sensors mit dem ESP32}, label={lst:dht11_code}]
+		#include <Arduino.h>
+		#include "DHT.h"
+		#include <WiFi.h>
+
+		#define DHTPIN 14
+		#define DHTTYPE DHT11
+
+		const char* ssid = "iPhone VBackhaus";
+		const char* password = "wtIhe357";
+
+		DHT dht(DHTPIN, DHTTYPE);
+		WiFiServer server(80);
+
+		void setup() {
+		Serial.begin(115200);
+		
+		WiFi.begin(ssid, password);
+		Serial.println("Verbindet mit WLAN...");
+		while (WiFi.status() != WL_CONNECTED) {
+			delay(1000);
+			Serial.println("Noch keine Verbindung...");
+		}
+
+		Serial.println("Verbunden");
+		Serial.print("IP-Adresse: ");
+		Serial.println(WiFi.localIP());
+
+		dht.begin();
+		server.begin();
+		Serial.println("Server gestartet");
+		}
+
+		void loop() {
+		WiFiClient client = server.available();
+		if (!client) return;
+
+		Serial.println("Neuer Client verbunden");
+		String request = client.readStringUntil('\r');
+		Serial.println(request);
+		client.flush();
+
+		//pruefen ob die Anfrage nach "/data" geht
+		if (request.indexOf("GET /data") >= 0) {
+			float h = dht.readHumidity();
+			float t = dht.readTemperature();
+
+			client.println("HTTP/1.1 200 OK");
+			client.println("Content-Type: application/json");
+			client.println("Connection: close");
+			client.println();
+
+			if (isnan(h) || isnan(t)) {
+			client.println("{\"error\": \"Sensorfehler\"}");
+			} else {
+			client.printf("{\"temperature\": %.2f, \"humidity\": %.2f}", t, h);
+			}
+			return;
+		}
+
+		//HTML datei mit Script
+		String html = R"rawliteral(
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>DHT11 Sensor</title>
+		</head>
+		<body>
+			<h1>ESP32 DHT11 Sensorwerte</h1>
+			<p>Temperatur: <span id="temp">--</span> C</p>
+			<p>Luftfeuchtigkeit: <span id="hum">--</span> %</p>
+
+			<script>
+			// Diese Funktion holt neue Daten vom ESP32
+			async function ladeDaten() {
+				const antwort = await fetch('/data');      // Anfrage an /data schicken
+				const daten = await antwort.json();        // Antwort als JSON lesen
+				document.getElementById('temp').textContent = daten.temperature;
+				document.getElementById('temp').textContent = daten.temperature;
+			}
+
+			ladeDaten();                 // Beim Laden der Seite einmal aufrufen
+			setInterval(ladeDaten, 3000); // Alle 3 Sekunden automatisch neu laden
+			</script>
+		</body>
+		</html>
+		)rawliteral";
+
+		client.println("HTTP/1.1 200 OK");
+		client.println("Content-type:text/html");
+		client.println("Connection: close");
+		client.println();
+		client.println(html);
+		client.println();
+		}
+\end{lstlisting}
+% Noch machen: Code einfügen (was zu hölle läuft hier falsch mit listings???)
+
+\section*{B. Abbildungen}
+
+\begin{figure}[H]
+	 \centering 
+	 \resizebox{\textwidth}{!}
+	 { \includegraphics{circuit_image.png} } 
+	 \vspace{10pt} 
+	 \caption{Anhang: Schaltplan DHT11 (eigene Abbildung)}\label{anhang: Schaltplan} 
+\end{figure}
+
+\begin{figure}[H]
+	 \centering 
+	 \resizebox{\textwidth}{!}
+	 { \includegraphics{Luftfeuchtigkeitsmessreihe.png} } 
+	 \vspace{10pt} 
+	 \caption{Anhang: Luftfeuchtigkeitsmessreihe}\label{anhang: Luftfeuchtigkeitsmessreihe} 
+\end{figure}
+
+
+\begin{figure}[H]
+	 \centering 
+	 \resizebox{\textwidth}{!}
+	 { \includegraphics{Luftfeuchtigkeitsmessreihe.png} } 
+	 \vspace{10pt} 
+	 \caption{Anhang:Temperaturmessreihe}\label{anhang: Temperaturmessreihe} 
+\end{figure}
+
+\begin{figure}[H]
+	 \centering 
+	 \resizebox{\textwidth}{!}
+	 { \includegraphics{ausschnitt_Taupunkttabelle.png} } 
+	 \vspace{10pt} 
+	 \caption{Anhang: Auschnitt aus der Taupunkttabelle \protect\citeM{d}{tauKor}{1}{1}}\label{anhang:Auschnitt_Taupunkttabelle} 
+\end{figure}
+
+
+
+\pagebreak
+%\includepdf[pages=-,scale=.9,pagecommand={}]{Aufgabenstellung.pdf} % PDF um 10% verkleinert einbinden --> Kopf- und Fußzeile  werden so korrekt dargestellt. Die Option `pages' ermöglicht es, eine bestimmte Sequenz von Seiten (z.B. 2-10 oder `-' für alle Seiten) auszuwählen.
+\pagebreak
+
+
+

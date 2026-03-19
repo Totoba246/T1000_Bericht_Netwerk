@@ -1,0 +1,26 @@
+%!TEX root = ../dokumentation.tex
+
+\addchap{\langabkverz}
+%nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt
+%Verwendung: 
+%		\ac{Abk.}   --> fügt die Abkürzung ein, beim ersten Aufruf wird zusätzlich automatisch die ausgeschriebene Version davor eingefügt bzw. in einer Fußnote (hierfür muss in header.tex \usepackage[printonlyused,footnote]{acronym} stehen) dargestellt
+%		\acs{Abk.}   -->  fügt die Abkürzung ein
+%		\acf{Abk.}   --> fügt die Abkürzung UND die Erklärung ein
+%		\acl{Abk.}   --> fügt nur die Erklärung ein
+%		\acp{Abk.}  --> gibt Plural aus (angefügtes 's'); das zusätzliche 'p' funktioniert auch bei obigen Befehlen
+%       \aclp{Abk.} --> gibt die Erklärung in Plura (angefügtes 's' aus
+%	siehe auch: http://golatex.de/wiki/%5Cacronym
+%	
+\begin{acronym}[YTMMM]
+\setlength{\itemsep}{.5\parsep}
+
+\acro{API}{App Programming Interface}
+\acro{DHBW}{Duale Hochschule Baden-Würtemberg}
+\acro{HVAC}{Heating, Ventilation and Air Conditioning}
+\acro{MCU}{Mikrocontroller-Einheit}
+\acro{EEPROM}{electrically erasable programmable read-only memory}
+\acro{IoT}{Internet of Things}
+\acro{OSI}{Open Systems Interconnection}
+\acro{TCP}{Transmission Control Protocol}
+\acro{UDP}{User Datagram Protocol}
+\end{acronym}
