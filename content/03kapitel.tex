@@ -2,7 +2,7 @@
 
 \chapter{Umsetzung}
 
-\section{Planung und Aufbau}
+\section{Aufbau des Sensors}
 
 Für den praktischen Aufbau des Systems werden folgende Komponenten benötigt:
 
@@ -43,132 +43,6 @@ Optional können die Daten über die Weboberfläche dargestellt
 werden, um die Genauigkeit des Sensors für Anwendungen wie 
 Defogging-Systeme zu beurteilen.
 
-
-
-\section{Durchführung}
-
-\subsection{Messreihe zur Genauigkeit des DHT11 Sensors}
-Für die Durchführung der Messungen wurde der Versuchsaufbau 
-in einem geschlossenen Raum platziert, um konstante 
-Umgebungsbedingungen zu gewährleisten. Dann wurden je fünf Messungen mit zwei verschiedenen DHT11 Sensoren gestartet, 
-um sicher zu 
-gehen, dass der verwendete Sensor nicht durch einen FEertigungsfehler oder Beschädigung ungenauer ist als andere DHT11 Sensoren.
- Der ESP32 liest 
-den DHT11 in einem festen Intervall von zwei Sekunden aus. 
-Die Messwerte werden unmittelbar über die serielle Schnittstelle
-ausgegeben und auf der vom ESP32 gehosteten Website 
-ausgegeben.
-
-\begin{figure}[H]
-	\centering
-    \begin{subfigure}{.49\textwidth}
-        \centering
-        \resizebox{\textwidth}{!}{
-            \includegraphics{Temperaturmessreihe.png} 
-            }
-	        \vspace{10pt} 
-            \caption {Messreihe Temperatur (eigene Abbildung)}\label{Messreihe Temperatur}
-    \end{subfigure}
-    \begin{subfigure}{.49\textwidth}
-            \centering
-        \resizebox{\textwidth}{!}{
-             \includegraphics{Luftfeuchtigkeitsmessreihe.png} 
-        }
-	        \vspace{10pt} 
-            \caption {Messreihe Luftfeuchtigkeit (eigene Abbildung)}\label{Messreihe Luftfeuchtigkeit} 
-    \end{subfigure}
-    \caption{Messungen zur Genauigkeit des DHT11 Sensors}\label{Messungen DHT11 (Eigene Abbildung)}
-\end{figure}
-
-Die Standardabweichung der Temperaturmessungen über beide 
-Sensoren liegt bei 0,32°C, während die Luftfeuchtigkeit eine 
-Standardabweichung von 1,75\% aufweist. Diese Werte deuten darauf 
-hin, dass die Temperatursensoren eine hohe Präzision aufweisen, 
-während die Feuchtigkeitssensoren geringfügig stärkeren 
-Schwankungen unterliegen.
-
-Ein Vergleich der beiden Sensoren zeigt, dass Sensor 2 
-systematisch leicht höhere Werte sowohl für Temperatur 
-(+0,56°C) als auch für Luftfeuchtigkeit (+0,92\%) liefert. Was jedoch
-ebenfalls darauf zurückzuführen sein konnte, dass sowohl die Luftfeuchtigkeit
-als auch die Temperatur im Raum gestiegen ist, da sich mehrere Menschen dort befanden.
-
-
-Insgesamt bestätigen die Daten jedoch eine zufriedenstellende 
-Übereinstimmung der Sensoren. Die geringe Streuung der Messwerte 
-spricht für eine zuverlässige Messgenauigkeit, die für den Einsatz im präventiven Defogging geeignet ist.
- 
-
-
-\section{Theoretische Implementierung zum Defogging}
-Im Folgenden wird beschrieben, wie das entwickelte Sensorsystem theoretisch zur Prävention von 
-Scheibenbeschlag eingesetzt werden kann. Grundlage hierfür ist das physikalische Prinzip der 
-Kondensation: Beschlag entsteht, wenn die Temperatur der Scheibenoberfläche unter den Taupunkt 
-der umgebenden Luft fällt \citeM{i}{Ene_2021}{2}{2}. Zur Bestimmung dieses Zusammenhangs werden 
-Taupunkttabellen herangezogen.
-\begin{figure}[H]
-	 \centering 
-	 \resizebox{\textwidth}{!}
-	 { \includegraphics{ausschnitt_Taupunkttabelle.png} } 
-	 \vspace{10pt} 
-	 \caption{Ausschnitt aus der Taupunkttabelle \protect\citeM{d}{tauKor}{1}{1}}\label{Ausschnitt_Taupunkttabelle} 
-\end{figure}
-
-Die Taupunkttabelle gibt an, bei welchen Kombinationen aus Lufttemperatur und relativer Luftfeuchtigkeit Kondensation auftritt. 
-Um diese Bedingungen zuverlässig zu erkennen, ist neben der Messung der Lufttemperatur und -feuchtigkeit durch den DHT11 ein zusätzlicher 
-Sensor erforderlich, der die Temperatur der Windschutzscheibe erfasst.
-
-Ein Algorithmus wertet anschließend alle drei Messgrößen Lufttemperatur, Luftfeuchtigkeit und Scheibentemperatur in regelmäßigen Abständen aus. 
-Liegt beispielsweise eine Lufttemperatur von 10 °C bei einer relativen Luftfeuchtigkeit von 70 \% vor, so tritt Kondensation auf, 
-sobald die Scheibentemperatur auf 4,79 °C oder darunter absinkt (siehe Abbildung \ref{Ausschnitt_Taupunkttabelle}). Der Algorithmus muss folglich nicht nur den aktuellen Zustand erfassen, sondern insbesondere die Entwicklung der Scheibentemperatur überwachen, um rechtzeitig vor dem Erreichen des Taupunkts reagieren zu können.
-
-Als Gegenmaßnahme wird eine leichte Erwärmung der Scheibe vorgesehen. Diese kann entweder über das \ac{HVAC}-System 
-oder, sofern vorhanden, über eine integrierte Scheibenheizung erfolgen. 
-Ziel ist es, den Temperaturunterschied zwischen Scheibe und Taupunkt so gering zu 
-halten, dass eine Kondensation vermieden wird.
-
-\section{Kritische Betrachtung und Lösungsansätze}
-
-Bei der Betrachtung des vorgestellten Konzepts ergeben sich mehrere Einschränkungen und Herausforderungen. 
-Für Fahrzeuge mit Verbrennungsmotor ist das System nur bedingt geeignet, da ein automatisches Heizsystem 
-die Fahrzeugbatterie unnötig belasten würde. Da die elektrische Energie hier nicht primär für den Fahrzeugantrieb 
-vorgesehen ist, steht der zusätzliche Energieverbrauch in keinem sinnvollen Verhältnis zum Nutzen.
-
-Für Elektrofahrzeuge erscheint der Ansatz grundsätzlich geeigneter, da die benötigte Energie aus dem Hauptakku 
-bezogen werden kann. Dennoch zeigt sich auch hier ein zentrales Problem: Der präventive Charakter des Systems führt 
-in vielen Situationen zu einem ineffizienten Energieeinsatz. Ist das System dauerhaft aktiv, wird kontinuierlich 
-Energie für das Auslesen und Auswerten der Sensordaten sowie für eine potenzielle Scheibenbeheizung verbraucht, 
-selbst wenn kein Beschlag droht. Insbesondere bei längeren Standzeiten, etwa über Nacht oder bei selten genutzten 
-Fahrzeugen, würde das System unnötig Energie verbrauchen und somit die Reichweite eines Elektrofahrzeugs spürbar 
-reduzieren.
-
-\subsection{Lösungsansatz 1: Aktivierung nur beim Ladevorgang}
-Ein möglicher Ansatz besteht darin, das System ausschließlich während des Ladevorgangs eines Elektrofahrzeugs zu 
-aktivieren. In diesem Fall hätte der zusätzliche Energieverbrauch keinen direkten Einfluss auf die Reichweite. 
-Allerdings wird dabei weiterhin Energie eingesetzt, auch wenn eine Defogging-Maßnahme nicht erforderlich ist. Der 
-grundsätzliche Nachteil eines ineffizienten Dauerbetriebs bleibt somit bestehen, sodass dieser Ansatz zwar praktikabel,
-jedoch nicht nachhaltig ist.
-
-
-\subsection{Lösungsansatz 2: Intelligentes Defogging}
-MEine weitere Möglichkeit ist die Implementierung eines intelligenten Systems, das das Fahrverhalten des Nutzers 
-analysiert. Erkennt das System beispielsweise wiederkehrende Fahrzeiten, etwa den täglichen Arbeitsweg, könnte das 
-Defogging automatisch zu diesen Zeiten aktiviert werden, ohne dass ein manuelles Eingreifen erforderlich ist. Dieser 
-Ansatz reduziert zwar unnötigen Energieverbrauch, birgt jedoch ebenfalls Risiken. Ändert sich das Fahrverhalten, etwa 
-durch Urlaub oder flexible Arbeitszeiten, kann das System unnötig aktiv werden und erneut Energie verschwenden.
-
-\subsection{Lösungsansatz 3: Ferngesteuertes Defogging}
-Die effektivste Lösung stellt ein ferngesteuertes Defogging-System dar. In diesem Szenario ist das System nicht 
-dauerhaft präventiv aktiv, sondern wird gezielt durch den Fahrer gesteuert. Über eine App könnten Abfahrtszeiten 
-manuell festgelegt oder wiederkehrende Routinen definiert werden. Das System würde dann wenige Minuten vor der 
-geplanten Abfahrt aktiviert, um den aktuellen Zustand der Scheiben zu überprüfen und bei Bedarf geeignete 
-Gegenmaßnahmen einzuleiten.
-
-Auf diese Weise wird Energie ausschließlich dann verbraucht, wenn ein tatsächlicher Bedarf besteht. Gleichzeitig 
-vereinfacht sich der erforderliche Algorithmus, da nicht mehr die langfristige Entwicklung der Scheibentemperatur 
-überwacht werden muss, sondern lediglich der aktuelle Zustand relevant ist. Dieser Ansatz stellt somit einen sinnvollen
-Kompromiss zwischen Funktionalität und Energieeffizienz dar und bietet die praktikabelste Lösung zur Umsetzung des 
-vorgestellten Konzepts.
 
 
 

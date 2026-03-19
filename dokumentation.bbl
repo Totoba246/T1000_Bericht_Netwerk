@@ -36,7 +36,8 @@
     \field{sortinit}{B}
     \field{sortinithash}{B}
     \field{isbn}{978-3658005481}
-    \field{title}{Messelektronik und Sensoren: Grundlagen der Messtechnik, Sensoren, analoge und digitale Signalverarbeitung}
+    \field{title}{Messelektronik und Sensoren: Grundlagen der Messtechnik,
+  Sensoren, analoge und digitale Signalverarbeitung}
     \field{year}{2013}
   \endentry
 
@@ -45,7 +46,8 @@
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{note}{(zuletzt geprüft: 14.12.2025)}
-    \field{title}{DHT22/AM2302 Digitaler Temperatur- und Luftfeuchtigkeitssensor}
+    \field{title}{DHT22/AM2302 Digitaler Temperatur- und
+  Luftfeuchtigkeitssensor}
     \verb{url}
     \verb https://www.elektronik-kompendium.de/sites/praxis/bauteil_dht22.html
     \endverb
@@ -75,9 +77,11 @@
     \field{sortinit}{E}
     \field{sortinithash}{E}
     \field{number}{1}
-    \field{title}{Studies dealing with defogging and de-icing phenomena on vehicles’ windshield: a review}
+    \field{title}{Studies dealing with defogging and de-icing phenomena on
+  vehicles’ windshield: a review}
     \field{volume}{664}
-    \field{journaltitle}{IOP Conference Series: Earth and Environmental Science}
+    \field{journaltitle}{IOP Conference Series: Earth and Environmental
+  Science}
     \field{year}{2021}
   \endentry
 
@@ -99,7 +103,8 @@
     \field{sortinit}{H}
     \field{sortinithash}{H}
     \field{note}{(zuletzt geprüft: 14.12.2025)}
-    \field{title}{Hochschule Hamm Lippstadt: Temperatur und Feutchtigkeitssensor DHT11}
+    \field{title}{Hochschule Hamm Lippstadt: Temperatur und
+  Feutchtigkeitssensor DHT11}
     \verb{url}
     \verb https://wiki.hshl.de/wiki/index.php/Temperatur-_und_Feuchtigkeitssens
     \verb or_DHT11
