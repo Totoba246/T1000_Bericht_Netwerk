@@ -38,6 +38,9 @@ notwendige Versorgung und Anschlüsse bereitstellen,
 um die vielfältigen Funktionen des ESP32 einfach nutzen zu können
 \citeM{i}{digiESP.2023}{}{}.
 
+\section{Raspberry Pi}
+Was wann etc. auch aufs OS eingehen, besonders auf den neuen Network Manager
+
 \section{Der DHT11 Sensor}
 Der DHT11 Sensor ist in der Lage, Temperatur und Luftfeuchtigkeit zu messen.
 
@@ -137,32 +140,18 @@ Webzugriff (HTTP). Im Projekt könnten hier Protokolle wie MQTT zur
 Sensordatenübertragung eingesetzt werden \citeM{i}{ibmMikro}{}{}.
 
 
-\section{Stand der Technik}
+\section{TCP/IP-Protokollfamilie}
+Warum nutzt ihr TCP? Erklärung der verbindungsorientierten Übertragung (Three-Way-Handshake, Zuverlässigkeit). Das ist wichtig, um später bei der Evaluation den "Connection reset by peer"-Fehler erklären zu können!
 
-\subsection{Temperatur und Feuchtigkeitssensoren}
+\section{MQTT und HTTP}
+Der Vergleich!
 
-Neben dem DHT11 existieren zahlreiche weitere Sensoren zur Messung 
-von Temperatur und Luftfeuchtigkeit. Der DHT22 stellt das Nachfolgermodell
-des DHT11 dar und bietet einen erweiterten und genaueren Messbereich.
-\enquote{Der Temperaturmessbereich reicht von 
--40°C bis 80°C und der Messbereich der Luftfeuchtigkeit reicht von 0\% bis 100\% 
-mit einer Genauigkeit bzw. Abweichung von ±0,5°C und ±2-5\%}  
-\citeM{d}{kompDHT22}{}{}.
+MQTT: Leichtgewichtig, Publish/Subscribe, perfekt für den ESP32 und instabiles WLAN.
+HTTP: Request/Response-Modell, schwergewichtiger. Wird intern von Telegraf (um Daten an InfluxDB zu senden) und von Grafana (für das Web-Dashboard) genutzt.
 
-Alternativ können standardisierte Widerstandsthermometer
-wie Pt100 oder Ni100 eingesetzt werden. Diese Sensoren besitzen deutlich 
-größere Messbereiche  (Ni100: -60°C bis 180°C, 
-Pt100: -200°C bis zu 850°C) \citeM{i}{bernstein:2013}{233}{236}.
-Für das präventive Defogging in Fahrzeugen ist dieser große Bereich jedoch 
-nicht notwendig, da lediglich Innen- und Außentemperaturen relevant sind. 
-Zudem erfassen diese Sensoren ausschließlich die Temperatur, weshalb zur 
-Bestimmung des Taupunkts ein zusätzlicher Feuchtigkeitssensor erforderlich 
-wäre.
+\section{Container-Netzwerke(Docker Bridge)}
+Wie kommunizieren Docker-Container? Erklärung des virtuellen Switches (docker0), der ein komplett eigenes Subnetz aufspannt, getrennt vom physischen WLAN.
 
-Der DHT11 ist daher für die Anwendung am besten geeignet. Sein Messbereich 
-entspricht den typischen Werten, die in Taupunkttabellen (\autoref{Ausschnitt_Taupunkttabelle})
-verwendet werden.
-Diese Tabellen zeigen die Temperatur an, bei der Kondensation entsteht, 
-abhängig von Lufttemperatur und relativer Luftfeuchtigkeit. Relevante 
-Temperaturwerte liegen meist zwischen 2°C und 50°C,
-die Feuchtigkeit zwischen 45\% und 95\%.
+
+\section{Tunneling und Reverse Proxies (Cloudflare Tunnel)}
+Die Theorie, wie man ein lokales Netzwerk sicher ins Internet bringt. Erklärung, dass der Tunnel von innen nach außen aufgebaut wird, wodurch man NAT-Firewalls am Router umgeht, ohne Ports öffnen zu müssen.

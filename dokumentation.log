@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.13)  19 MAR 2026 18:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.13)  24 MAR 2026 16:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1662,11 +1662,6 @@ Package biblatex Info: ... file 'dokumentation.bbl' found.
  (dokumentation.bbl
 
 Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with 'kompDHT22':
-(biblatex)                - Invalid format of field 'urldate'.
-
-
-Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'digiESP.2023':
 (biblatex)                - Invalid format of field 'urldate'.
 
@@ -1712,46 +1707,46 @@ Package microtype Info: Loading generic protrusion settings for font family
 ) [1] (ads/erklaerung.tex) [2]
 Package tocbasic Info: character protrusion at toc deactivated on input line 75.
  (dokumentation.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 6.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 5.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 6.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 5.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 6.
+(Font)              <12> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 6.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 6.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+(Font)              <6> on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-))
+) [3
+
+])
 \tf@toc=\write7
 \openout7 = `dokumentation.toc'.
 
- [3
-
-] (ads/acronyms.tex
+ [4] (ads/acronyms.tex
 chapter without number
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -1767,7 +1762,7 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              \float@addtolist interface has been
 (scrreprt)              removed from all KOMA-Script classes.
 
-) [4
+) [5
 
 
 
@@ -1777,7 +1772,7 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 87.
 \tf@lof=\write8
 \openout8 = `dokumentation.lof'.
 
- [5
+ [6
 
 
 ] (content/01kapitel.tex
@@ -1810,42 +1805,54 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 {C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 Package acronym Info: Label `acro:OSI' newly defined as it shall be overridden
-although it is yet undefined on input line 63.
+although it is yet undefined on input line 66.
 Package babel Info: 'ngerman' activates 'german' shorthands.
-(babel)             Reported on input line 91.
+(babel)             Reported on input line 85.
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [3{C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
 Package acronym Info: Label `acro:TCP' newly defined as it shall be overridden
-although it is yet undefined on input line 112.
-Package acronym Info: Label `acro:UDP' newly defined as it shall be overridden
 although it is yet undefined on input line 115.
+Package acronym Info: Label `acro:UDP' newly defined as it shall be overridden
+although it is yet undefined on input line 118.
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [4]
-
-LaTeX Warning: Reference `Ausschnitt_Taupunkttabelle' on page 5 undefined on input line 163.
-
-) (content/03kapitel.tex
+ [4]) (content/03kapitel.tex
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [5]
-chapter 3.
-<images/circuit_image.png, id=201, 479.391pt x 434.8245pt>
-File: images/circuit_image.png Graphic file (type png)
-<use images/circuit_image.png>
-Package pdftex.def Info: images/circuit_image.png  used on input line 27.
-(pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
-[6
-
- <./images/circuit_image.png>]) (content/04kapitel.tex
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [7]
+ [6]
+chapter 3.
+<images/circuit_image.png, id=240, 479.391pt x 434.8245pt>
+File: images/circuit_image.png Graphic file (type png)
+<use images/circuit_image.png>
+Package pdftex.def Info: images/circuit_image.png  used on input line 33.
+(pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
+[7
+
+]) (content/04kapitel.tex
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+ [8 <./images/circuit_image.png>]
 chapter 4.
-) [8
+) (content/05kapitel.tex [9
+
+]
+chapter 5.
+) (content/06kapitel.tex [10
+
+]
+chapter 6.
+)
+Overfull \hbox (62.00821pt too wide) in paragraph at lines 7--124
+\T1/lmr/m/n/12 (-20) sta-bil als ei-ge-nen Ac-cess Point be-trei-ben zu kön-nen.                                                                                                 
+ []
+
+[11
 
 ]
 chapter without number
@@ -1865,26 +1872,26 @@ Overfull \hbox (13.39139pt too wide) in paragraph at lines 130--130
 [][]$\T1/lmtt/m/n/12 https : / / wiki . hshl . de / wiki / index . php / Temperatur -[] _und _ Feuchtigkeitssensor _
  []
 
-(dokumentation.gls) (ads/appendix.tex [9
+(dokumentation.gls) (ads/appendix.tex [12
 
 
 
 ]
 chapter without number
-[10
+[13
 
 ]
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [11]
+ [14]
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [12]
+ [15]
 File: images/circuit_image.png Graphic file (type png)
 <use images/circuit_image.png>
 Package pdftex.def Info: images/circuit_image.png  used on input line 122.
 (pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
-<images/Luftfeuchtigkeitsmessreihe.png, id=335, 284.262pt x 272.81924pt>
+<images/Luftfeuchtigkeitsmessreihe.png, id=380, 284.262pt x 272.81924pt>
 File: images/Luftfeuchtigkeitsmessreihe.png Graphic file (type png)
 <use images/Luftfeuchtigkeitsmessreihe.png>
 Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input line 130.
@@ -1892,7 +1899,7 @@ Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [13]
+ [16]
 File: images/Luftfeuchtigkeitsmessreihe.png Graphic file (type png)
 <use images/Luftfeuchtigkeitsmessreihe.png>
 Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input line 139.
@@ -1900,8 +1907,8 @@ Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [14 <./images/Luftfeuchtigkeitsmessreihe.png>]
-<images/ausschnitt_Taupunkttabelle.png, id=355, 464.937pt x 105.996pt>
+ [17 <./images/Luftfeuchtigkeitsmessreihe.png>]
+<images/ausschnitt_Taupunkttabelle.png, id=399, 464.937pt x 105.996pt>
 File: images/ausschnitt_Taupunkttabelle.png Graphic file (type png)
 <use images/ausschnitt_Taupunkttabelle.png>
 Package pdftex.def Info: images/ausschnitt_Taupunkttabelle.png  used on input line 147.
@@ -1909,33 +1916,29 @@ Package pdftex.def Info: images/ausschnitt_Taupunkttabelle.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [15 <./images/ausschnitt_Taupunkttabelle.png>])
+ [18 <./images/ausschnitt_Taupunkttabelle.png>])
 No complaints by nag.
 (dokumentation.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 \openout1 = `dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64151 strings out of 467871
- 1447015 string characters out of 5418376
- 2883229 words of memory out of 5000000
- 91662 multiletter control sequences out of 15000+600000
- 706525 words of font info for 162 fonts, out of 8000000 for 9000
+ 64193 strings out of 467871
+ 1447351 string characters out of 5418376
+ 2883133 words of memory out of 5000000
+ 91677 multiletter control sequences out of 15000+600000
+ 706639 words of font info for 163 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  120i,10n,134p,11287b,3444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on dokumentation.pdf (21 pages, 887583 bytes).
+Output written on dokumentation.pdf (25 pages, 905622 bytes).
 PDF statistics:
- 520 PDF objects out of 1000 (max. 8388607)
- 167 named destinations out of 1000 (max. 500000)
- 47933 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 620 PDF objects out of 1000 (max. 8388607)
+ 186 named destinations out of 1000 (max. 500000)
+ 48069 words of extra memory for PDF output out of 51595 (max. 10000000)
 

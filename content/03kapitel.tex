@@ -1,6 +1,12 @@
 %!TEX root = ../dokumentation.tex
 
-\chapter{Umsetzung}
+\chapter{Planung und Konzeption}
+
+\section{Systemarchitektur und Datenfluss}
+ Der Weg der Daten durch die OSI-Schichten. Sensor -> TCP/MQTT (WLAN) -> Raspberry Pi -> TCP/HTTP (Docker Bridge) -> Datenbank. Später dann: Grafana -> Cloudflare Tunnel -> Endnutzer.
+
+\section{Netzwerktopologie}
+Geplant war eine autarke Sterntopologie mit dem Raspberry Pi als zentralem Access Point für alle Geräte.
 
 \section{Aufbau des Sensors}
 

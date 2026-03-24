@@ -17,44 +17,6 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global/global}
-  \entry{bernstein:2013}{book}{}{}
-    \name{author}{1}{}{%
-      {{hash=BH}{%
-         family={Bernstein},
-         familyi={B\bibinitperiod},
-         given={Herbert},
-         giveni={H\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Springer Vieweg}%
-    }
-    \strng{namehash}{BH1}
-    \strng{fullhash}{BH1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{B}
-    \field{sortinithash}{B}
-    \field{isbn}{978-3658005481}
-    \field{title}{Messelektronik und Sensoren: Grundlagen der Messtechnik,
-  Sensoren, analoge und digitale Signalverarbeitung}
-    \field{year}{2013}
-  \endentry
-
-  \entry{kompDHT22}{online}{}{}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{D}
-    \field{sortinithash}{D}
-    \field{note}{(zuletzt geprüft: 14.12.2025)}
-    \field{title}{DHT22/AM2302 Digitaler Temperatur- und
-  Luftfeuchtigkeitssensor}
-    \verb{url}
-    \verb https://www.elektronik-kompendium.de/sites/praxis/bauteil_dht22.html
-    \endverb
-    \field{year}{n.d.}
-    \warn{\item Invalid format of field 'urldate'}
-  \endentry
-
   \entry{digiESP.2023}{online}{}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{E}

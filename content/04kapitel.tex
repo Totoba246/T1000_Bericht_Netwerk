@@ -1,5 +1,13 @@
 %!TEX root = ../dokumentation.tex
 
-\chapter{Fazit und Ausblick}
+\chapter{Implementierung der Netzwerkinfrastruktur}
 
+\section{Lokale IoT-Datenübertragung}
+Wie der ESP32 sich ins WLAN einwählt, die TCP-Verbindung aufbaut und die Sensordaten per MQTT an den Port 1883 des Raspberry Pis sendet.
+
+\section{Interne Systemkommunikation (Docker Routing)}
+Die Umsetzung der Theorie aus 2.5. Grafana und Telegraf finden die InfluxDB einfach über den Container-Namen (z.B. http://influxdb:8086). Daten verlassen hierfür nie das virtuelle docker0-Netz.
+
+\section{Externe Datenübertragung (Cloudflare Tunnel)}
+Die praktische Umsetzung von 2.6. Installation des Cloudflared-Dienstes auf dem Pi, Verknüpfung mit der gekauften Domain und das automatische HTTPS-Zertifikat für den sicheren Browser-Zugriff.
 
