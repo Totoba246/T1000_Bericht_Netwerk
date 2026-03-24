@@ -46,29 +46,6 @@
     \field{urlyear}{2023}
   \endentry
 
-  \entry{kappes:2013}{book}{}{}
-    \name{author}{1}{}{%
-      {{hash=KM}{%
-         family={Kappes},
-         familyi={K\bibinitperiod},
-         given={Martin},
-         giveni={M\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Springer Vieweg}%
-    }
-    \strng{namehash}{KM1}
-    \strng{fullhash}{KM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{sortinit}{K}
-    \field{sortinithash}{K}
-    \field{isbn}{978-3834806369}
-    \field{title}{Netzwerk- und Datensicherheit: Eine praktische Einführung}
-    \field{year}{2013}
-  \endentry
-
   \entry{tauKor}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=SK}{%
@@ -90,17 +67,37 @@
     \field{year}{n.d.}
   \endentry
 
-  \entry{ibmOSI}{online}{}{}
+  \entry{tanenbaum2011}{book}{}{}
+    \name{author}{2}{}{%
+      {{hash=TAS}{%
+         family={Tanenbaum},
+         familyi={T\bibinitperiod},
+         given={Andrew\bibnamedelima S.},
+         giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=WDJ}{%
+         family={Wetherall},
+         familyi={W\bibinitperiod},
+         given={David\bibnamedelima J.},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Prentice Hall}%
+    }
+    \strng{namehash}{TASWDJ1}
+    \strng{fullhash}{TASWDJ1}
+    \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{W}
-    \field{sortinithash}{W}
-    \field{note}{(zuletzt geprüft: 14.12.2025)}
-    \field{title}{WAs ist das OSI-Modell?}
-    \verb{url}
-    \verb https://www.ibm.com/de-de/think/topics/osi-model
-    \endverb
-    \field{year}{2025}
-    \warn{\item Invalid format of field 'urldate'}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{edition}{5}
+    \field{isbn}{978-0132126953}
+    \field{title}{Computer Networks}
+    \list{location}{1}{%
+      {Boston}%
+    }
+    \field{year}{2011}
   \endentry
 
   \entry{ibmMikro}{online}{}{}

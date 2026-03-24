@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.13)  24 MAR 2026 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.13)  24 MAR 2026 20:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1496,11 +1496,11 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \glo@main@file=\write6
 \openout6 = `dokumentation.glo'.
 
-Package glossaries Info: Writing glossary file dokumentation.glo on input line 21.
+Package glossaries Info: Writing glossary file dokumentation.glo on input line 6.
  (ads/glossary.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 24.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 9.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (dokumentation.aux
@@ -1509,37 +1509,37 @@ Package babel Info: 'ngerman' activates 'german' shorthands.
 )
 \openout1 = `dokumentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-Package nag Info: pgf.sty is broken: disabling dollar check on input line 24.
-Package nag Info: Command \bf not defined, skipping amendment on input line 24.
-Package nag Info: Command \it not defined, skipping amendment on input line 24.
-Package nag Info: Command \rm not defined, skipping amendment on input line 24.
-Package nag Info: Command \sc not defined, skipping amendment on input line 24.
-Package nag Info: Command \sf not defined, skipping amendment on input line 24.
-Package nag Info: Command \sl not defined, skipping amendment on input line 24.
-Package nag Info: Command \tt not defined, skipping amendment on input line 24.
-Package nag Info: Command \frontmatter not defined, skipping amendment on input line 24.
-Package nag Info: Command \mainmatter not defined, skipping amendment on input line 24.
-Package nag Info: Command \backmatter not defined, skipping amendment on input line 24.
-Package nag Info: Command \RaggedLeft not defined, skipping amendment on input line 24.
-Package nag Info: Command \RaggedRight not defined, skipping amendment on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+Package nag Info: pgf.sty is broken: disabling dollar check on input line 9.
+Package nag Info: Command \bf not defined, skipping amendment on input line 9.
+Package nag Info: Command \it not defined, skipping amendment on input line 9.
+Package nag Info: Command \rm not defined, skipping amendment on input line 9.
+Package nag Info: Command \sc not defined, skipping amendment on input line 9.
+Package nag Info: Command \sf not defined, skipping amendment on input line 9.
+Package nag Info: Command \sl not defined, skipping amendment on input line 9.
+Package nag Info: Command \tt not defined, skipping amendment on input line 9.
+Package nag Info: Command \frontmatter not defined, skipping amendment on input line 9.
+Package nag Info: Command \mainmatter not defined, skipping amendment on input line 9.
+Package nag Info: Command \backmatter not defined, skipping amendment on input line 9.
+Package nag Info: Command \RaggedLeft not defined, skipping amendment on input line 9.
+Package nag Info: Command \RaggedRight not defined, skipping amendment on input line 9.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count555
@@ -1592,13 +1592,13 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 24.
-Package microtype Info: Applying patch `item' on input line 24.
-Package microtype Info: Applying patch `toc' on input line 24.
-Package microtype Info: Applying patch `eqnum' on input line 24.
-Package microtype Info: Applying patch `footnote' on input line 24.
-Package microtype Info: Applying patch `verbatim' on input line 24.
-LaTeX Info: Redefining \microtypesetup on input line 24.
+LaTeX Info: Redefining \microtypecontext on input line 9.
+Package microtype Info: Applying patch `item' on input line 9.
+Package microtype Info: Applying patch `toc' on input line 9.
+Package microtype Info: Applying patch `eqnum' on input line 9.
+Package microtype Info: Applying patch `footnote' on input line 9.
+Package microtype Info: Applying patch `verbatim' on input line 9.
+LaTeX Info: Redefining \microtypesetup on input line 9.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1619,7 +1619,7 @@ Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PDF
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )))
 \c@lstlisting=\count561
-Package tocbasic Info: setting babel extension for `lol' on input line 24.
+Package tocbasic Info: setting babel extension for `lol' on input line 9.
 \scr@dte@lstlisting@maxnumwidth=\skip116
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
@@ -1629,7 +1629,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
 !!! switch to italics
-Package hyperref Info: Link coloring ON on input line 24.
+Package hyperref Info: Link coloring ON on input line 9.
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
 (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\ngerman.lbx
@@ -1667,18 +1667,13 @@ Package biblatex Warning: BibTeX reported the following issues
 
 
 Package biblatex Warning: BibTeX reported the following issues
-(biblatex)                with 'ibmOSI':
-(biblatex)                - Invalid format of field 'urldate'.
-
-
-Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'ibmMikro':
 (biblatex)                - Invalid format of field 'urldate'.
 
 )
-Package biblatex Info: Reference section=0 on input line 24.
-Package biblatex Info: Reference segment=0 on input line 24.
-Package nag Info: Command \hc@caption not defined, skipping amendment on input line 24.
+Package biblatex Info: Reference section=0 on input line 9.
+Package biblatex Info: Reference segment=0 on input line 9.
+Package nag Info: Command \hc@caption not defined, skipping amendment on input line 9.
  (ads/deckblatt.tex
 <images/dhbw.png, id=33, 710.655pt x 299.1175pt>
 File: images/dhbw.png Graphic file (type png)
@@ -1705,7 +1700,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 ) [1] (ads/erklaerung.tex) [2]
-Package tocbasic Info: character protrusion at toc deactivated on input line 75.
+Package tocbasic Info: character protrusion at toc deactivated on input line 60.
  (dokumentation.toc
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5.
  (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
@@ -1767,7 +1762,7 @@ Class scrreprt Warning: \float@addtolists detected!
 
 
 ]
-Package tocbasic Info: character protrusion at lof deactivated on input line 87.
+Package tocbasic Info: character protrusion at lof deactivated on input line 72.
  (dokumentation.lof)
 \tf@lof=\write8
 \openout8 = `dokumentation.lof'.
@@ -1805,61 +1800,53 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 {C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 Package acronym Info: Label `acro:OSI' newly defined as it shall be overridden
-although it is yet undefined on input line 66.
+although it is yet undefined on input line 71.
 Package babel Info: 'ngerman' activates 'german' shorthands.
-(babel)             Reported on input line 85.
+(babel)             Reported on input line 76.
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [3{C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Package acronym Info: Label `acro:TCP' newly defined as it shall be overridden
-although it is yet undefined on input line 115.
-Package acronym Info: Label `acro:UDP' newly defined as it shall be overridden
-although it is yet undefined on input line 118.
-
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [4]) (content/03kapitel.tex
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [5]
-Overfull \vbox (7.89444pt too high) has occurred while \output is active []
-
- [6]
 chapter 3.
-<images/circuit_image.png, id=240, 479.391pt x 434.8245pt>
+<images/circuit_image.png, id=218, 479.391pt x 434.8245pt>
 File: images/circuit_image.png Graphic file (type png)
 <use images/circuit_image.png>
 Package pdftex.def Info: images/circuit_image.png  used on input line 33.
 (pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
-[7
+[6
 
 ]) (content/04kapitel.tex
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [8 <./images/circuit_image.png>]
+ [7 <./images/circuit_image.png>]
 chapter 4.
-) (content/05kapitel.tex [9
+) (content/05kapitel.tex [8
 
 ]
 chapter 5.
-) (content/06kapitel.tex [10
+) (content/06kapitel.tex [9
 
 ]
 chapter 6.
 )
-Overfull \hbox (62.00821pt too wide) in paragraph at lines 7--124
+Overfull \hbox (62.00821pt too wide) in paragraph at lines 7--109
 \T1/lmr/m/n/12 (-20) sta-bil als ei-ge-nen Ac-cess Point be-trei-ben zu kön-nen.                                                                                                 
  []
 
-[11
+[10
 
 ]
 chapter without number
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 129.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 114.
 (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1868,30 +1855,30 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (13.39139pt too wide) in paragraph at lines 130--130
+Overfull \hbox (13.39139pt too wide) in paragraph at lines 115--115
 [][]$\T1/lmtt/m/n/12 https : / / wiki . hshl . de / wiki / index . php / Temperatur -[] _und _ Feuchtigkeitssensor _
  []
 
-(dokumentation.gls) (ads/appendix.tex [12
+(dokumentation.gls) (ads/appendix.tex [11
 
 
 
 ]
 chapter without number
-[13
+[12
 
 ]
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [14]
+ [13]
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [15]
+ [14]
 File: images/circuit_image.png Graphic file (type png)
 <use images/circuit_image.png>
 Package pdftex.def Info: images/circuit_image.png  used on input line 122.
 (pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
-<images/Luftfeuchtigkeitsmessreihe.png, id=380, 284.262pt x 272.81924pt>
+<images/Luftfeuchtigkeitsmessreihe.png, id=357, 284.262pt x 272.81924pt>
 File: images/Luftfeuchtigkeitsmessreihe.png Graphic file (type png)
 <use images/Luftfeuchtigkeitsmessreihe.png>
 Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input line 130.
@@ -1899,7 +1886,7 @@ Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [16]
+ [15]
 File: images/Luftfeuchtigkeitsmessreihe.png Graphic file (type png)
 <use images/Luftfeuchtigkeitsmessreihe.png>
 Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input line 139.
@@ -1907,8 +1894,8 @@ Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [17 <./images/Luftfeuchtigkeitsmessreihe.png>]
-<images/ausschnitt_Taupunkttabelle.png, id=399, 464.937pt x 105.996pt>
+ [16 <./images/Luftfeuchtigkeitsmessreihe.png>]
+<images/ausschnitt_Taupunkttabelle.png, id=376, 464.937pt x 105.996pt>
 File: images/ausschnitt_Taupunkttabelle.png Graphic file (type png)
 <use images/ausschnitt_Taupunkttabelle.png>
 Package pdftex.def Info: images/ausschnitt_Taupunkttabelle.png  used on input line 147.
@@ -1916,7 +1903,7 @@ Package pdftex.def Info: images/ausschnitt_Taupunkttabelle.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [18 <./images/ausschnitt_Taupunkttabelle.png>])
+ [17 <./images/ausschnitt_Taupunkttabelle.png>])
 No complaints by nag.
 (dokumentation.aux)
  ***********
@@ -1928,17 +1915,17 @@ Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64193 strings out of 467871
- 1447351 string characters out of 5418376
- 2883133 words of memory out of 5000000
- 91677 multiletter control sequences out of 15000+600000
- 706639 words of font info for 163 fonts, out of 8000000 for 9000
+ 64171 strings out of 467871
+ 1447009 string characters out of 5418376
+ 2883007 words of memory out of 5000000
+ 91664 multiletter control sequences out of 15000+600000
+ 706447 words of font info for 161 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  120i,10n,134p,11287b,3444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on dokumentation.pdf (25 pages, 905622 bytes).
+Output written on dokumentation.pdf (24 pages, 899494 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 186 named destinations out of 1000 (max. 500000)
- 48069 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 599 PDF objects out of 1000 (max. 8388607)
+ 181 named destinations out of 1000 (max. 500000)
+ 48077 words of extra memory for PDF output out of 51595 (max. 10000000)
 

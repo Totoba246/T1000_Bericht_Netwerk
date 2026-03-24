@@ -11,31 +11,32 @@
 \contentsline {subsection}{\numberline {2.1.2}Besonderheiten des ESP32}{2}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}Raspberry Pi}{3}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Der DHT11 Sensor}{3}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Kommunikation und OSI-Modell}{3}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Physikalische Schicht / Bitübertragungsschicht}{4}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Datenverbindungsschicht / Sicherungsschicht}{4}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Netzwerkschicht / Vermittlungsschicht}{4}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Transportschicht}{4}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Applikationsschicht}{5}{subsection.2.4.5}%
-\contentsline {section}{\numberline {2.5}TCP/IP-Protokollfamilie}{5}{section.2.5}%
+\contentsline {section}{\numberline {2.4}OSI-Referenzmodell}{3}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Netzwerkprotokolle und Referenzmodelle}{3}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Physikalische Schicht (Schicht 1)}{4}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Sicherungsschicht (Schicht 2)}{4}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Vermittlungsschicht (Schicht 3)}{5}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Transportschicht (Schicht 4)}{5}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}Anwendungsschicht (Schicht 5 bis 7)}{5}{subsection.2.5.5}%
+\contentsline {subsection}{\numberline {2.5.6}Einordnung in das TCP/IP-Referenzmodell}{5}{subsection.2.5.6}%
 \contentsline {section}{\numberline {2.6}MQTT und HTTP}{5}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Container-Netzwerke(Docker Bridge)}{5}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Tunneling und Reverse Proxies (Cloudflare Tunnel)}{6}{section.2.8}%
-\contentsline {chapter}{\numberline {3}Planung und Konzeption}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Systemarchitektur und Datenfluss}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Netzwerktopologie}{7}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Aufbau des Sensors}{7}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Implementierung der Netzwerkinfrastruktur}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Lokale IoT-Datenübertragung}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Interne Systemkommunikation (Docker Routing)}{9}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Externe Datenübertragung (Cloudflare Tunnel)}{9}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Kritische Betrachtung und Evaluation}{10}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Evaluation der autarken WLAN-Infrastruktur}{10}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Analyse von TCP-Verbindungsabbrüchen}{10}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{11}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Zusammenfassung der Ergebnisse}{11}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ausblick}{11}{section.6.2}%
-\contentsline {chapter}{\nonumberline Literatur}{12}{chapter*.11}%
-\contentsline {chapter}{\nonumberline Anhang}{13}{chapter*.12}%
-\contentsline {section}{A. Code}{14}{Item.2}%
+\contentsline {section}{\numberline {2.8}Tunneling und Reverse Proxies (Cloudflare Tunnel)}{5}{section.2.8}%
+\contentsline {chapter}{\numberline {3}Planung und Konzeption}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Systemarchitektur und Datenfluss}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Netzwerktopologie}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Aufbau des Sensors}{6}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Implementierung der Netzwerkinfrastruktur}{8}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Lokale IoT-Datenübertragung}{8}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Interne Systemkommunikation (Docker Routing)}{8}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Externe Datenübertragung (Cloudflare Tunnel)}{8}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Kritische Betrachtung und Evaluation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Evaluation der autarken WLAN-Infrastruktur}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Analyse von TCP-Verbindungsabbrüchen}{9}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Fazit und Ausblick}{10}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Zusammenfassung der Ergebnisse}{10}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ausblick}{10}{section.6.2}%
+\contentsline {chapter}{\nonumberline Literatur}{11}{chapter*.9}%
+\contentsline {chapter}{\nonumberline Anhang}{12}{chapter*.10}%
+\contentsline {section}{A. Code}{13}{Item.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
