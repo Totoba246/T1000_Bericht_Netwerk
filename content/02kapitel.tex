@@ -1,16 +1,18 @@
 %!TEX root = ../dokumentation.tex
 
-\chapter{Theorieteil}
+\chapter{Relevante Netzwerkprotokolle und Technologien}
+
+Zu beginn werden alle technisch und theoretisch relevanten Konzepte, Protokolle und Technologien vorgestellt und ertläutert. Es werden die benötigten Hardware-Komponenten, wie der ESP32 Mikrocontroller, der DHT11 Sensor und der Raspberry Pi beschrieben. Daraufhin wird das OSI-Referenzmodell vorgestellt, um die verschiedenen Schichten der Netzwerkkommunikation zu erklären. Anschließend werden die Protokolle MQTT und HTTP miteinander verglichen, bevor die Besonderheiten von Container-Netzwerken (Docker Bridge) und Tunneling (Cloudflare Tunnel) erläutert werden.
 
 \section{Mikrocontroller}
 
 \subsection{Was ist ein Mikrocontroller?}
-Ein Mikrocontroller (auch \ac{MCU}) ist ein kompakter Computer, der aus einem einzigen Chip besteht. Er wurde speziell dafür entwickelt, Aufgaben in eingebetteten Systemen zu übernehmen, ohne dafür ein komplexes Betriebssystem zu benötigen. 
+Ein Mikrocontroller (auch \ac{MCU}) ist ein kompakter Computer, der aus einem einzigen Chip besteht. Er wurde speziell dafür entwickelt, Aufgaben in eingebetteten Systemen zu übernehmen, ohne dafür ein komplexes Betriebssystem zu benötigen.
 
 Ein solcher Chip vereint in der Regel einen Prozessor, Arbeitsspeicher, einen programmierbaren Festspeicher (wie \ac{EEPROM} oder Flash) sowie diverse Ein- und Ausgabeschnittstellen. Im Gegensatz zu klassischen Mikroprozessoren benötigt ein Mikrocontroller für seine Grundfunktionen keine weiteren externen Bausteine. Er ist stattdessen darauf optimiert, direkt mit der physischen Welt zu interagieren, beispielsweise durch die Steuerung von Sensoren oder Motoren \citeM{i}{ibmMikro}{}{}.
 
 \subsection{Besonderheiten des ESP32}
-Der ESP32 ist ein leistungsfähiger Mikrocontroller der Firma Espressif und der direkte Nachfolger des ESP8266. Er verfügt über einen 32-Bit-Dual-Core-Prozessor, was ihm eine besonders hohe Verarbeitungsgeschwindigkeit verleiht. 
+Der ESP32 ist ein leistungsfähiger Mikrocontroller der Firma Espressif und der direkte Nachfolger des ESP8266. Er verfügt über einen 32-Bit-Dual-Core-Prozessor, was ihm eine besonders hohe Verarbeitungsgeschwindigkeit verleiht.
 
 Zu den Kernfunktionen des Chips gehört die integrierte drahtlose Kommunikation. Der ESP32 kann sich als Client mit bestehenden WLAN-Netzwerken verbinden oder selbst als Access Point ein eigenes Netzwerk aufspannen. Zudem unterstützt das Modul Bluetooth, was es für Smart-Home- und \ac{IoT}-Anwendungen ideal macht.
 
@@ -25,24 +27,16 @@ Was wann etc. auch aufs OS eingehen, besonders auf den neuen Network Manager
 Der DHT11 Sensor ist in der Lage, Temperatur und Luftfeuchtigkeit zu messen.
 
 Zum Messen der Temperatur hat der DHT11 ein Negative Temperature Coefficient
-Thermistor. Dabei handelt es sich um einen Widerstand, welcher geringer wird je höher die 
-Temperatur ist, da die Leitfähigkeit des Materials zunimmt.
+Thermistor. Dabei handelt es sich um einen Widerstand, welcher geringer wird je höher die Temperatur ist, da die Leitfähigkeit des Materials zunimmt.
 
-Für die Luftfeuchtigkeit ist ein Kondensator in den DHT11 eingebaut. Dieser besteht 
-aus zwei Elektroden, zwischen diesen 
-befindet sich ein flüssigkeitsempfindliches Substrat. Je höher die 
-Luftfeuchtigkeit ist, desto mehr Kapazität besitzt dieses Substrat.
+Für die Luftfeuchtigkeit ist ein Kondensator in den DHT11 eingebaut. Dieser besteht aus zwei Elektroden, zwischen diesen  befindet sich ein flüssigkeitsempfindliches Substrat. Je höher die Luftfeuchtigkeit ist, desto mehr Kapazität besitzt dieses Substrat.
 
-Aus diesen Daten ermittelt der Sensor die tatsächlichen Werte durch eine Kalibrierung, 
-welche durch den Hersteller vorgenommen wurde.
+Aus diesen Daten ermittelt der Sensor die tatsächlichen Werte durch eine Kalibrierung, welche durch den Hersteller vorgenommen wurde.
 
 Er ist in der Lage Temperaturen von 0°C bis 50°C bei einer Messgenauigkeit von  $\pm$ 2,0°C
-zu erfassen 
-die Luftfeuchtigkeit kann im Bereich von 20\% bis 90\% gemessen werden, 
-wobei die Messgenauigkeit $\pm$ 5\% beträgt \citeM{i}{HammLipp.2023}{}{}.
+zu erfassen die Luftfeuchtigkeit kann im Bereich von 20\% bis 90\% gemessen werden, wobei die Messgenauigkeit $\pm$ 5\% beträgt \citeM{i}{HammLipp.2023}{}{}.
 
 \section{OSI-Referenzmodell}
-\section{Netzwerkprotokolle und Referenzmodelle}
 
 % ---------------------------------------------------------
 % 1. EINLEITUNG: WAS IST DAS OSI-MODELL?
@@ -61,11 +55,11 @@ In der untersten Schicht, der Physikalischen Schicht, werden die rohen Bits übe
 
 Während die physikalische Schicht lediglich den Bitstrom überträgt, dient die Sicherungsschicht (Data Link Layer) der Abstraktion hardwarenaher Übertragungsfehler. Ziel ist es, der übergeordneten Vermittlungsschicht eine zuverlässige, logische Verbindung zur Verfügung zu stellen. Dieser Prozess basiert primär auf der Framing-Technik, bei der Datenströme in diskrete Einheiten segmentiert werden.
 
-Zur Gewährleistung der Datenintegrität implementiert die Schicht Mechanismen zur Fehlererkennung sowie – je nach Protokollspezifikation – Bestätigungsverfahren \ac{ACK}. Eine integrierte Flusssteuerung schützt zudem langsame Empfängerinstanzen vor einer Datenüberlastung durch den Sender. Im Kontext des ESP32 und der verwendeten WLAN-Kommunikation übernimmt die Sicherungsschicht zudem die Medienzugriffssteuerung (MAC). Diese koordiniert den Zugriff auf das geteilte Funkmedium, um Kollisionen zu minimieren und eine strukturierte Datenübermittlung im Netzwerkverbund sicherzustellen \citeM{i}{tanenbaum2011}{43}{43}.
+Zur Gewährleistung der Datenintegrität implementiert die Schicht Mechanismen zur Fehlererkennung sowie, je nach Protokollspezifikation, Bestätigungsverfahren \ac{ACK}. Eine integrierte Flusssteuerung schützt zudem langsame Empfängerinstanzen vor einer Datenüberlastung durch den Sender. Im Kontext des ESP32 und der verwendeten WLAN-Kommunikation übernimmt die Sicherungsschicht zudem die Medienzugriffssteuerung (MAC). Diese koordiniert den Zugriff auf das geteilte Funkmedium, um Kollisionen zu minimieren und eine strukturierte Datenübermittlung im Netzwerkverbund sicherzustellen \citeM{i}{tanenbaum2011}{43}{43}.
 
 \subsubsection{WLAN (IEEE 802.11) und CSMA/CA}
 
-Für die kabellose Datenübertragung im lokalen Netzwerk nutzt der ESP32 den WLAN-Standard IEEE 802.11. Da drahtlose Netzwerkschnittstellen im Gegensatz zum klassischen kabelgebundenen Ethernet (IEEE 802.3) \citem{i}{tanenbaum2011}{20}{20} in der Regel \textit{half-duplex} arbeiten - also nicht gleichzeitig auf derselben Frequenz senden und empfangen können -, ist eine direkte Kollisionserkennung während des Sendens physikalisch nicht möglich. Ein gesendetes Signal ist um ein Vielfaches stärker als ein empfangenes, weshalb der Sender „taub“ für Fehler ist, solange er selbst funkt.
+Für die kabellose Datenübertragung im lokalen Netzwerk nutzt der ESP32 den WLAN-Standard IEEE 802.11. Da drahtlose Netzwerkschnittstellen im Gegensatz zum klassischen kabelgebundenen Ethernet (IEEE 802.3) \citeM{i}{tanenbaum2011}{20}{20} in der Regel \textit{half-duplex} arbeiten, also nicht gleichzeitig auf derselben Frequenz senden und empfangen können, ist eine direkte Kollisionserkennung während des Sendens physikalisch nicht möglich. Ein gesendetes Signal ist um ein Vielfaches stärker als ein empfangenes, weshalb der Sender „taub“ für Fehler ist, solange er selbst funkt.
 
 Um Signalüberlagerungen in der Luft dennoch zu minimieren, kommt auf der MAC-Teilschicht das Protokoll \ac{CSMA/CA} (Carrier Sense Multiple Access with Collision Avoidance) zum Einsatz. Bevor ein Knoten, wie in diesem Fall der Mikrocontroller, einen Datenrahmen sendet, prüft er zunächst, ob das Funkmedium frei ist (Carrier Sense). Um Kollisionen mit anderen wartenden Geräten präventiv zu vermeiden (Collision Avoidance), wartet der Sender eine zufällig gewählte Zeitspanne (Backoff-Zähler) ab, bevor er die Übertragung startet \citeM{i}{tanenbaum2011}{...}{...}.
 

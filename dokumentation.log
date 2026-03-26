@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.13)  24 MAR 2026 20:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.13)  26 MAR 2026 16:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1783,54 +1783,63 @@ l.3 \chapter
 ]
 chapter 2.
 Package acronym Info: Label `acro:MCU' newly defined as it shall be overridden
-although it is yet undefined on input line 7.
+although it is yet undefined on input line 8.
 Package acronym Info: Label `acro:EEPROM' newly defined as it shall be overridden
-although it is yet undefined on input line 13.
-
-Overfull \hbox (9.157pt too wide) in paragraph at lines 12--16
-[]\T1/lmr/m/n/12 (-20) Er ent-hält einen Pro-zes-sor, Ar-beitsspei-cher und einen pro-gram-mier-ba-ren Spei-cher ([][][]electrically
- []
-
+although it is yet undefined on input line 10.
 Package acronym Info: Label `acro:IoT' newly defined as it shall be overridden
-although it is yet undefined on input line 27.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 33.
+although it is yet undefined on input line 15.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17.
 (C:\Users\totob\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2
 
 {C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 Package acronym Info: Label `acro:OSI' newly defined as it shall be overridden
-although it is yet undefined on input line 71.
+although it is yet undefined on input line 50.
 Package babel Info: 'ngerman' activates 'german' shorthands.
-(babel)             Reported on input line 76.
+(babel)             Reported on input line 51.
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [3{C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+Package acronym Info: Label `acro:ACK' newly defined as it shall be overridden
+although it is yet undefined on input line 63.
+
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [4]) (content/03kapitel.tex
+ [4]
+Package acronym Info: Label `acro:CSMA/CA' newly defined as it shall be overridden
+although it is yet undefined on input line 69.
+
+Overfull \hbox (7.2652pt too wide) in paragraph at lines 69--70
+\T1/lmr/m/n/12 (-20) Teilschicht das Pro-to-koll [][][]Carrier Sen-se Mul-ti-ple Ac-cess with Col-li-si-on Avoi-dance ([])[]
+ []
+
+
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [5]
+ [5]) (content/03kapitel.tex
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+ [6]
 chapter 3.
-<images/circuit_image.png, id=218, 479.391pt x 434.8245pt>
+<images/circuit_image.png, id=241, 479.391pt x 434.8245pt>
 File: images/circuit_image.png Graphic file (type png)
 <use images/circuit_image.png>
 Package pdftex.def Info: images/circuit_image.png  used on input line 33.
 (pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
-[6
+[7
 
 ]) (content/04kapitel.tex
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [7 <./images/circuit_image.png>]
+ [8 <./images/circuit_image.png>]
 chapter 4.
-) (content/05kapitel.tex [8
+) (content/05kapitel.tex [9
 
 ]
 chapter 5.
-) (content/06kapitel.tex [9
+) (content/06kapitel.tex [10
 
 ]
 chapter 6.
@@ -1839,7 +1848,7 @@ Overfull \hbox (62.00821pt too wide) in paragraph at lines 7--109
 \T1/lmr/m/n/12 (-20) sta-bil als ei-ge-nen Ac-cess Point be-trei-ben zu kön-nen.                                                                                                 
  []
 
-[10
+[11
 
 ]
 chapter without number
@@ -1859,26 +1868,26 @@ Overfull \hbox (13.39139pt too wide) in paragraph at lines 115--115
 [][]$\T1/lmtt/m/n/12 https : / / wiki . hshl . de / wiki / index . php / Temperatur -[] _und _ Feuchtigkeitssensor _
  []
 
-(dokumentation.gls) (ads/appendix.tex [11
+(dokumentation.gls) (ads/appendix.tex [12
 
 
 
 ]
 chapter without number
-[12
+[13
 
 ]
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [13]
+ [14]
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [14]
+ [15]
 File: images/circuit_image.png Graphic file (type png)
 <use images/circuit_image.png>
 Package pdftex.def Info: images/circuit_image.png  used on input line 122.
 (pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
-<images/Luftfeuchtigkeitsmessreihe.png, id=357, 284.262pt x 272.81924pt>
+<images/Luftfeuchtigkeitsmessreihe.png, id=379, 284.262pt x 272.81924pt>
 File: images/Luftfeuchtigkeitsmessreihe.png Graphic file (type png)
 <use images/Luftfeuchtigkeitsmessreihe.png>
 Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input line 130.
@@ -1886,7 +1895,7 @@ Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [15]
+ [16]
 File: images/Luftfeuchtigkeitsmessreihe.png Graphic file (type png)
 <use images/Luftfeuchtigkeitsmessreihe.png>
 Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input line 139.
@@ -1894,8 +1903,8 @@ Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [16 <./images/Luftfeuchtigkeitsmessreihe.png>]
-<images/ausschnitt_Taupunkttabelle.png, id=376, 464.937pt x 105.996pt>
+ [17 <./images/Luftfeuchtigkeitsmessreihe.png>]
+<images/ausschnitt_Taupunkttabelle.png, id=398, 464.937pt x 105.996pt>
 File: images/ausschnitt_Taupunkttabelle.png Graphic file (type png)
 <use images/ausschnitt_Taupunkttabelle.png>
 Package pdftex.def Info: images/ausschnitt_Taupunkttabelle.png  used on input line 147.
@@ -1903,7 +1912,7 @@ Package pdftex.def Info: images/ausschnitt_Taupunkttabelle.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [17 <./images/ausschnitt_Taupunkttabelle.png>])
+ [18 <./images/ausschnitt_Taupunkttabelle.png>])
 No complaints by nag.
 (dokumentation.aux)
  ***********
@@ -1915,17 +1924,17 @@ Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64171 strings out of 467871
- 1447009 string characters out of 5418376
- 2883007 words of memory out of 5000000
- 91664 multiletter control sequences out of 15000+600000
+ 64203 strings out of 467871
+ 1447718 string characters out of 5418376
+ 2883424 words of memory out of 5000000
+ 91691 multiletter control sequences out of 15000+600000
  706447 words of font info for 161 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  120i,10n,134p,11287b,3444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro12.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/totob/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on dokumentation.pdf (24 pages, 899494 bytes).
+Output written on dokumentation.pdf (25 pages, 907337 bytes).
 PDF statistics:
- 599 PDF objects out of 1000 (max. 8388607)
- 181 named destinations out of 1000 (max. 500000)
- 48077 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 619 PDF objects out of 1000 (max. 8388607)
+ 186 named destinations out of 1000 (max. 500000)
+ 48069 words of extra memory for PDF output out of 51595 (max. 10000000)
 
