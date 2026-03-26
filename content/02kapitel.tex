@@ -69,13 +69,17 @@ Für die kabellose Datenübertragung im lokalen Netzwerk nutzt der ESP32 den WLA
 
 Um Signalüberlagerungen in der Luft dennoch zu minimieren, kommt auf der MAC-Teilschicht das Protokoll \ac{CSMA/CA} (Carrier Sense Multiple Access with Collision Avoidance) zum Einsatz. Bevor ein Knoten, wie in diesem Fall der Mikrocontroller, einen Datenrahmen sendet, prüft er zunächst, ob das Funkmedium frei ist (Carrier Sense). Um Kollisionen mit anderen wartenden Geräten präventiv zu vermeiden (Collision Avoidance), wartet der Sender eine zufällig gewählte Zeitspanne (Backoff-Zähler) ab, bevor er die Übertragung startet \citeM{i}{tanenbaum2011}{...}{...}.
 
-Da der Sender eigene Kollisionen nicht registrieren kann, erfordert \ac{CSMA/CA} zwingend eine kurze Empfangsbestätigung \ac{ACK} der Gegenstelle. Bleibt dieses \ac{ACK} aus, geht der Sender von einem Übertragungsfehler oder einer Kollision aus, verdoppelt seine zufällige Wartezeit (Exponential Backoff) und unternimmt einen erneuten Sendeversuch\citem{i}{tanenbaum2011}{303}{303}.
+Da der Sender eigene Kollisionen nicht registrieren kann, erfordert \ac{CSMA/CA} zwingend eine kurze Empfangsbestätigung \ac{ACK} der Gegenstelle. Bleibt dieses \ac{ACK} aus, geht der Sender von einem Übertragungsfehler oder einer Kollision aus, verdoppelt seine zufällige Wartezeit (Exponential Backoff) und unternimmt einen erneuten Sendeversuch\citeM{i}{tanenbaum2011}{303}{303}.
 % ---------------------------------------------------------
 % 3. DIE NETZWERKSCHICHT (Wichtig für Docker!)
 % ---------------------------------------------------------
 \subsection{Vermittlungsschicht (Schicht 3)}
-% DEINE AUFGABE: Erkläre, dass es hier um das Routing von Paketen quer durch verschiedene Netzwerke geht. 
-% PROJEKTBEZUG: Nenne das IP-Protokoll (Internet Protocol). Erwähne kurz, dass diese Schicht später wichtig wird, um zu verstehen, wie das Docker-Bridge-Netzwerk intern die IP-Adressen für InfluxDB und Grafana routet. \cite{tanenbaum2011}
+
+Die Vermittlungsschicht (Network Layer) steuert den Betrieb des Kommunikationsnetzes und ist primär für die Wegewahl (Routing) der Datenpakete vom Sender zum Zielort verantwortlich. Während die darunterliegende Sicherungsschicht lediglich den Datenaustausch zwischen direkt physikalisch benachbarten Knoten koordiniert, ermöglicht die Vermittlungsschicht eine logische Kommunikation über mehrere Netzwerkgrenzen hinweg. 
+
+Eine der zentralen Aufgaben dieser Schicht ist die Bestimmung der optimalen Route durch das Netzwerk. Diese Routen können entweder statisch konfiguriert oder dynamisch an die aktuelle Netzwerkauslastung angepasst werden, um Überlastungen (Congestion) zu vermeiden. Sollten Datenpakete für ein zugrundeliegendes Netzwerk zu groß sein, übernimmt diese Schicht zudem die Fragmentierung in kleinere Einheiten \citeM{i}{tanenbaum2011}{43}{44}.
+
+Das dominierende Protokoll zur Umsetzung dieser Aufgaben in modernen Netzwerken ist das Internet Protocol (IP). Es arbeitet verbindungslos (connectionless), was bedeutet, dass jedes Datenpaket (Datagramm) unabhängig und ohne vorherigen Verbindungsaufbau durch das Netzwerk geroutet wird \citeM{i}{tanenbaum2011}{35}{37}. Es weist jedem Netzwerkknoten eine eindeutige logische IP-Adresse zu, wodurch eine zuverlässige Adressierung und Weiterleitung innerhalb komplexer Netzwerktopologien, wie beispielsweise auch in virtuellen Container-Netzwerken, gewährleistet wird  \citeM{i}{tanenbaum2011}{46}{47} \citeM{i}{tanenbaum2011}{438}{439}.
 
 % ---------------------------------------------------------
 % 4. DIE TRANSPORTSCHICHT (Dein wichtigster Teil!)
@@ -95,8 +99,7 @@ Da der Sender eigene Kollisionen nicht registrieren kann, erfordert \ac{CSMA/CA}
 % 6. DER SCHWENK ZUM TCP/IP-MODELL
 % ---------------------------------------------------------
 \subsection{Einordnung in das TCP/IP-Referenzmodell}
-Obwohl das OSI-Modell theoretisch präziser ist, hat sich in der Praxis der modernen Netzwerktechnik das TCP/IP-Referenzmodell durchgesetzt \cite{tanenbaum2011}. 
-% DEINE AUFGABE: Erkläre in 2-3 Sätzen, dass dieses Modell nur 4 Schichten hat (Netzzugang, Internet, Transport, Anwendung). Es fasst die OSI-Schichten 1+2 sowie 5-7 zusammen. Schließe damit ab, dass die in diesem Projekt genutzte Architektur (IP, TCP, MQTT/HTTP) exakt diesem TCP/IP-Stack entspricht.
+Bild aus Tanenbaum Seite 46. Und erklärung.
 
 
 \section{MQTT und HTTP}
