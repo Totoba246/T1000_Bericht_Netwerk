@@ -42,7 +42,7 @@ zu erfassen die Luftfeuchtigkeit kann im Bereich von 20\% bis 90\% gemessen werd
 % 1. EINLEITUNG: WAS IST DAS OSI-MODELL?
 % ---------------------------------------------------------
 
-Um die Kommunikation in komplexen Netzwerken wie dem in diesem Projekt aufgebauten IoT-System zu standardisieren, wird in der Literatur häufig das \ac{OSI}-Referenzmodell (Open Systems Interconnection) herangezogen. Es wurde in den 1980er Jahren von der Internationalen Organisation für Normung (ISO) entwickelt, um die Interoperabilität zwischen verschiedenen Netzwerksystemen zu gewährleisten. Es besteht aus sieben aufeinander aufbauenden Schichten, welche von Schicht 7 bis 1 beim Senden und von 1 bis 7 beim Empfang durchlaufen werden. Diese sieben Schichten erfüllen jeweils spezifische Aufgaben, die einen reibungslosen und standardisierten Datenaustausch ermöglichen. Dabei ist zu betonen, dass das Modell selbst keine spezifischen Protokolle oder Komponenten definiert, sondern lediglich die Aufgaben der jeweiligen Schichten vorgibt. Aus diesem Grund lassen sich in der Praxis genutzte Protokolle nicht immer eindeutig einer einzigen Schicht zuordnen, da sie oftmals mehrere Aufgaben gleichzeitig übernehmen \citeM{i}{tanenbaum2011}{41}{42}.
+Um die Kommunikation in komplexen Netzwerken wie dem in diesem Projekt aufgebauten IoT-System zu standardisieren, wird in der Literatur häufig das \ac{OSI}-Referenzmodell (Open Systems Interconnection) herangezogen. Es wurde in den 1980er Jahren von der Internationalen Organisation für Normung (ISO) entwickelt, um die Interoperabilität zwischen verschiedenen Netzwerksystemen zu gewährleisten. Es besteht aus sieben aufeinander aufbauenden Schichten, welche von Schicht 7 bis 1 beim Senden und von 1 bis 7 beim Empfang durchlaufen werden. Diese sieben Schichten erfüllen jeweils spezifische Aufgaben, die einen reibungslosen und standardisierten Datenaustausch ermöglichen. Dabei ist zu betonen, dass das Modell selbst keine spezifischen Protokolle oder Komponenten definiert, sondern lediglich die Aufgaben der jeweiligen Schichten vorgibt. Aus diesem Grund lassen sich in der Praxis genutzte Protokolle nicht immer eindeutig einer einzigen Schicht zuordnen, da sie oftmals mehrere Aufgaben gleichzeitig übernehmen \citeM{i}{tanenbaum2011}{41}{42}. %ergänzen: Schaubild
 
 % ---------------------------------------------------------
 % 2. DIE UNTEREN SCHICHTEN
@@ -79,13 +79,33 @@ Das dominierende Protokoll zur Umsetzung dieser Aufgaben in modernen Netzwerken 
 % 4. DIE TRANSPORTSCHICHT (Dein wichtigster Teil!)
 % ---------------------------------------------------------
 \subsection{Transportschicht (Schicht 4)}
-% DEINE AUFGABE: Erkläre den Unterschied zwischen TCP (verbindungsorientiert, zuverlässig) und UDP (schnell, unzuverlässig). 
-% PROJEKTBEZUG: Erkläre, dass euer System zwingend TCP nutzt, damit keine Sensordaten verloren gehen. Erwähne unbedingt den TCP-Three-Way-Handshake (SYN, SYN-ACK, ACK) - das brauchst du später für die Fehlersuche! \cite{tanenbaum2011}
+
+Die grundlegende Aufgabe der Transportschicht besteht darin, Daten von den darüberliegenden Schichten entgegenzunehmen, diese bei Bedarf in kleinere Einheiten zu unterteilen (Segmentierung) und an die Vermittlungsschicht weiterzuleiten. Gleichzeitig isoliert sie die oberen Anwendungsschichten vollständig von den unvermeidlichen technologischen Änderungen der zugrundeliegenden Hardware.
+
+Ein entscheidendes Merkmal der Transportschicht ist ihre Eigenschaft als erste echte Ende-zu-Ende-Schicht (End-to-End Layer) im \ac{OSI}-Modell. Im Gegensatz zu den Schichten 1 bis 3, die als Kette logisch nur mit ihren direkten physischen Nachbarknoten kommunizieren, stellt Layer 4 eine logische Verbindung direkt zwischen dem Ursprungs- und dem Zielsystem her. Ein Programm auf dem Quellsystem führt somit eine direkte Konversation mit dem entsprechenden Programm auf dem Zielsystem.
+
+Zudem bestimmt diese Schicht, welche Art von Dienst (Type of Service) der Sitzungsschicht bereitgestellt wird. Der am häufigsten genutzte Dienst ist ein fehlerfreier Punkt-zu-Punkt-Kanal, der garantiert, dass die Nachrichten in exakt der Reihenfolge ausgeliefert werden, in der sie gesendet wurden \citeM{i}{tanenbaum2011}{44}{44}. 
+
+\subsubsection{TCP und UDP}
+Um die beschriebenen Dienste der Transportschicht zu realisieren, kommen in der modernen Netzwerktechnik primär zwei Protokolle zum Einsatz, die sich gegenseitig ergänzen: das \ac{UDP} und das \ac{TCP}.
+
+\textbf{UDP (User Datagram Protocol):}\\
+UDP ist ein sehr einfaches, verbindungsloses Transportprotokoll. Es nimmt Daten von der Anwendungsebene entgegen und leitet sie weiter, ohne eine logische Verbindung aufzubauen oder eine Zustellgarantie zu übernehmen. Es wird primär für Anwendungen genutzt, bei denen eine schnelle Übertragung wichtiger ist als absolute Zuverlässigkeit, beispielsweise bei Multimedia-Streams \citeM{i}{tanenbaum}{541}{}.
+
+\textbf{TCP (Transmission Control Protocol):}\\
+Im Gegensatz dazu ist TCP ein verbindungsorientiertes Protokoll und gilt als das Arbeitspferd des Internets. Es garantiert die fehlerfreie und in der korrekten Reihenfolge eintreffende Auslieferung der Daten. Um diese Zuverlässigkeit zu gewährleisten, implementiert TCP komplexe Mechanismen wie Flusskontrolle, Überlastungssteuerung (Congestion Control) und das erneute Senden verloren gegangener Pakete (Retransmissions) Da in der vorliegenden \ac{IoT}-Architektur die verlässliche, lückenlose Übertragung der Sensordaten via \ac{MQTT} essenziell ist, basiert die gesamte Kommunikation auf TCP \citeM{i}{tanenbaum2011}{552}{559}.
+
+\textbf{TCP-Verbindungsaufbau (Three-Way-Handshake):}\\
+Da TCP verbindungsorientiert arbeitet, muss vor der eigentlichen Datenübertragung zwingend ein logischer Kanal zwischen Sender (Client) und Empfänger (Server) etabliert werden. Dies geschieht über den sogenannten Three-Way-Handshake. 
+
+Dabei wartet der Server zunächst passiv auf eingehende Verbindungsanfragen auf einem spezifischen Port (Listen-Status). Möchte ein Client eine Verbindung aufbauen, sendet er ein TCP-Segment mit gesetztem SYN-Flag (Synchronize) an den Server. Existiert auf dem Zielport ein wartender Prozess, akzeptiert der Server die Anfrage und antwortet mit einem kombinierten SYN-ACK-Segment (Synchronize-Acknowledge). Abschließend bestätigt der Client den Erhalt dieser Nachricht mit einem finalen ACK-Segment (Acknowledge), womit die zuverlässige bidirektionale Verbindung erfolgreich hergestellt ist und die eigentliche Datenübertragung der Anwendungsschicht beginnen kann (siehe Abbildung \ref{fig:tcp_handshake})\citeM{i}{tanenbaum2011}{560}{560}. %Bild Tanenbaum 561 nur a, nicht b
 
 % ---------------------------------------------------------
 % 5. DIE ANWENDUNGSSCHICHT (Zusammenfassung)
 % ---------------------------------------------------------
-\subsection{Anwendungsschicht (Schicht 5 bis 7)}
+\subsection{Sitzungsschicht (Schicht 5)}
+\subsection{Darstellungsschicht (Schicht 6)}
+\subsection{Anwendungsschicht (Schicht 7)}
 % DEINE AUFGABE: Erkläre kurz, dass die Schichten 5 und 6 in der Praxis oft direkt von der Anwendung mitübernommen werden. 
 % PROJEKTBEZUG: Hier arbeiten eure eigentlichen Daten-Protokolle: MQTT für das Senden der Sensordaten und HTTP(S) für den Abruf des Grafana-Dashboards.
 
