@@ -44,9 +44,6 @@ zu erfassen die Luftfeuchtigkeit kann im Bereich von 20\% bis 90\% gemessen werd
 
 Um die Kommunikation in komplexen Netzwerken wie dem in diesem Projekt aufgebauten IoT-System zu standardisieren, wird in der Literatur häufig das \ac{OSI}-Referenzmodell (Open Systems Interconnection) herangezogen. Es wurde in den 1980er Jahren von der Internationalen Organisation für Normung (ISO) entwickelt, um die Interoperabilität zwischen verschiedenen Netzwerksystemen zu gewährleisten. Es besteht aus sieben aufeinander aufbauenden Schichten, welche von Schicht 7 bis 1 beim Senden und von 1 bis 7 beim Empfang durchlaufen werden. Diese sieben Schichten erfüllen jeweils spezifische Aufgaben, die einen reibungslosen und standardisierten Datenaustausch ermöglichen. Dabei ist zu betonen, dass das Modell selbst keine spezifischen Protokolle oder Komponenten definiert, sondern lediglich die Aufgaben der jeweiligen Schichten vorgibt. Aus diesem Grund lassen sich in der Praxis genutzte Protokolle nicht immer eindeutig einer einzigen Schicht zuordnen, da sie oftmals mehrere Aufgaben gleichzeitig übernehmen \citeM{i}{tanenbaum2011}{41}{42}. %ergänzen: Schaubild
 
-% ---------------------------------------------------------
-% 2. DIE UNTEREN SCHICHTEN
-% ---------------------------------------------------------
 \subsection{Physikalische Schicht (Schicht 1)}
 
 In der untersten Schicht, der Physikalischen Schicht, werden die rohen Bits über das Medium übertragen. Es geht also um die elektrotechnische Umsetzung der Datenübertragung heutzutage ist das häfig WLAN, bzw. die physischen Funkwellen, welche diese Schicht abdecken. Aber auch LAN oder USB-Verbindungen würden hier eingeordnet werden \citeM{i}{tanenbaum2011}{43}{43}.
@@ -61,12 +58,10 @@ Zur Gewährleistung der Datenintegrität implementiert die Schicht Mechanismen z
 
 Für die kabellose Datenübertragung im lokalen Netzwerk nutzt der ESP32 den WLAN-Standard IEEE 802.11. Da drahtlose Netzwerkschnittstellen im Gegensatz zum klassischen kabelgebundenen Ethernet (IEEE 802.3) \citeM{i}{tanenbaum2011}{20}{20} in der Regel \textit{half-duplex} arbeiten, also nicht gleichzeitig auf derselben Frequenz senden und empfangen können, ist eine direkte Kollisionserkennung während des Sendens physikalisch nicht möglich. Ein gesendetes Signal ist um ein Vielfaches stärker als ein empfangenes, weshalb der Sender „taub“ für Fehler ist, solange er selbst funkt.
 
-Um Signalüberlagerungen in der Luft dennoch zu minimieren, kommt auf der MAC-Teilschicht das Protokoll \ac{CSMA/CA} (Carrier Sense Multiple Access with Collision Avoidance) zum Einsatz. Bevor ein Knoten, wie in diesem Fall der Mikrocontroller, einen Datenrahmen sendet, prüft er zunächst, ob das Funkmedium frei ist (Carrier Sense). Um Kollisionen mit anderen wartenden Geräten präventiv zu vermeiden (Collision Avoidance), wartet der Sender eine zufällig gewählte Zeitspanne (Backoff-Zähler) ab, bevor er die Übertragung startet \citeM{i}{tanenbaum2011}{...}{...}.
+Um Signalüberlagerungen in der Luft dennoch zu minimieren, kommt auf der MAC-Teilschicht das Protokoll \ac{CSMA/CA} zum Einsatz. Bevor ein Knoten, wie in diesem Fall der Mikrocontroller, einen Datenrahmen sendet, prüft er zunächst, ob das Funkmedium frei ist (Carrier Sense). Um Kollisionen mit anderen wartenden Geräten präventiv zu vermeiden (Collision Avoidance), wartet der Sender eine zufällig gewählte Zeitspanne (Backoff-Zähler) ab, bevor er die Übertragung startet \citeM{i}{tanenbaum2011}{43}{43}.
 
 Da der Sender eigene Kollisionen nicht registrieren kann, erfordert \ac{CSMA/CA} zwingend eine kurze Empfangsbestätigung \ac{ACK} der Gegenstelle. Bleibt dieses \ac{ACK} aus, geht der Sender von einem Übertragungsfehler oder einer Kollision aus, verdoppelt seine zufällige Wartezeit (Exponential Backoff) und unternimmt einen erneuten Sendeversuch\citeM{i}{tanenbaum2011}{303}{303}.
-% ---------------------------------------------------------
-% 3. DIE NETZWERKSCHICHT (Wichtig für Docker!)
-% ---------------------------------------------------------
+
 \subsection{Vermittlungsschicht (Schicht 3)}
 
 Die Vermittlungsschicht (Network Layer) steuert den Betrieb des Kommunikationsnetzes und ist primär für die Wegewahl (Routing) der Datenpakete vom Sender zum Zielort verantwortlich. Während die darunterliegende Sicherungsschicht lediglich den Datenaustausch zwischen direkt physikalisch benachbarten Knoten koordiniert, ermöglicht die Vermittlungsschicht eine logische Kommunikation über mehrere Netzwerkgrenzen hinweg. 
@@ -75,9 +70,6 @@ Eine der zentralen Aufgaben dieser Schicht ist die Bestimmung der optimalen Rout
 
 Das dominierende Protokoll zur Umsetzung dieser Aufgaben in modernen Netzwerken ist das Internet Protocol (IP). Es arbeitet verbindungslos (connectionless), was bedeutet, dass jedes Datenpaket (Datagramm) unabhängig und ohne vorherigen Verbindungsaufbau durch das Netzwerk geroutet wird \citeM{i}{tanenbaum2011}{35}{37}. Es weist jedem Netzwerkknoten eine eindeutige logische IP-Adresse zu, wodurch eine zuverlässige Adressierung und Weiterleitung innerhalb komplexer Netzwerktopologien, wie beispielsweise auch in virtuellen Container-Netzwerken, gewährleistet wird  \citeM{i}{tanenbaum2011}{46}{47} \citeM{i}{tanenbaum2011}{438}{439}.
 
-% ---------------------------------------------------------
-% 4. DIE TRANSPORTSCHICHT (Dein wichtigster Teil!)
-% ---------------------------------------------------------
 \subsection{Transportschicht (Schicht 4)}
 
 Die grundlegende Aufgabe der Transportschicht besteht darin, Daten von den darüberliegenden Schichten entgegenzunehmen, diese bei Bedarf in kleinere Einheiten zu unterteilen (Segmentierung) und an die Vermittlungsschicht weiterzuleiten. Gleichzeitig isoliert sie die oberen Anwendungsschichten vollständig von den unvermeidlichen technologischen Änderungen der zugrundeliegenden Hardware.
@@ -90,7 +82,7 @@ Zudem bestimmt diese Schicht, welche Art von Dienst (Type of Service) der darüb
 Um die beschriebenen Dienste der Transportschicht zu realisieren, kommen in der modernen Netzwerktechnik primär zwei Protokolle zum Einsatz, die sich gegenseitig ergänzen: das \ac{UDP} und das \ac{TCP}.
 
 \textbf{UDP (User Datagram Protocol):}\\
-UDP ist ein sehr einfaches, verbindungsloses Transportprotokoll. Es nimmt Daten von der Anwendungsebene entgegen und leitet sie weiter, ohne eine logische Verbindung aufzubauen oder eine Zustellgarantie zu übernehmen. Es wird primär für Anwendungen genutzt, bei denen eine schnelle Übertragung wichtiger ist als absolute Zuverlässigkeit, beispielsweise bei Multimedia-Streams \citeM{i}{tanenbaum}{541}{541}.
+UDP ist ein sehr einfaches, verbindungsloses Transportprotokoll. Es nimmt Daten von der Anwendungsebene entgegen und leitet sie weiter, ohne eine logische Verbindung aufzubauen oder eine Zustellgarantie zu übernehmen. Es wird primär für Anwendungen genutzt, bei denen eine schnelle Übertragung wichtiger ist als absolute Zuverlässigkeit, beispielsweise bei Multimedia-Streams \citeM{i}{tanenbaum2011}{541}{541}.
 
 \textbf{TCP (Transmission Control Protocol):}\\
 Im Gegensatz dazu ist TCP ein verbindungsorientiertes Protokoll und ist das am weitesten verbreitete Transportprotokoll im Internet. Es garantiert die fehlerfreie und in der korrekten Reihenfolge eintreffende Auslieferung der Daten. Um diese Zuverlässigkeit zu gewährleisten, implementiert TCP, im gegensatz zu UDP, komplexe Mechanismen wie Flusskontrolle, Überlastungssteuerung (Congestion Control) und das erneute Senden verloren gegangener Pakete (Retransmissions). Da in der vorliegenden \ac{IoT}-Architektur die verlässliche, lückenlose Übertragung der Sensordaten via \ac{MQTT} essenziell ist, basiert die gesamte Kommunikation auf TCP \citeM{i}{tanenbaum2011}{552}{559}.
@@ -98,22 +90,58 @@ Im Gegensatz dazu ist TCP ein verbindungsorientiertes Protokoll und ist das am w
 \textbf{TCP-Verbindungsaufbau (Three-Way-Handshake):}\\
 Da TCP verbindungsorientiert arbeitet, muss vor der eigentlichen Datenübertragung zunächst ein logischer Kanal zwischen Sender (Client) und Empfänger (Server) etabliert werden. Dies geschieht über den sogenannten Three-Way-Handshake. 
 
-Dabei wartet der Server zunächst passiv auf eingehende Verbindungsanfragen auf einem spezifischen Port (Listen-Status). Möchte ein Client eine Verbindung aufbauen, sendet er ein TCP-Segment mit gesetztem SYN-Flag (Synchronize) an den Server. Existiert auf dem Zielport ein wartender Prozess, akzeptiert der Server die Anfrage und antwortet mit einem kombinierten SYN-ACK-Segment (Synchronize-Acknowledge). Abschließend bestätigt der Client den Erhalt dieser Nachricht mit einem finalen ACK-Segment (Acknowledge), womit die zuverlässige bidirektionale Verbindung erfolgreich hergestellt ist und die eigentliche Datenübertragung der Anwendungsschicht beginnen kann (siehe Abbildung \ref{fig:tcp_handshake})\citeM{i}{tanenbaum2011}{560}{560}. %Bild Tanenbaum 561 nur a, nicht b
+Dabei wartet der Server zunächst passiv auf eingehende Verbindungsanfragen auf einem spezifischen Port (Listen-Status). Möchte ein Client eine Verbindung aufbauen, sendet er ein TCP-Segment mit gesetztem SYN-Flag (Synchronize) an den Server. Existiert auf dem Zielport ein wartender Prozess, akzeptiert der Server die Anfrage und antwortet mit einem kombinierten SYN-ACK-Segment (Synchronize-Acknowledge). Abschließend bestätigt der Client den Erhalt dieser Nachricht mit einem finalen ACK-Segment (Acknowledge), womit die zuverlässige bidirektionale Verbindung erfolgreich hergestellt ist und die eigentliche Datenübertragung der Anwendungsschicht beginnen kann (siehe Abbildung \ref{fig:tcp_handshake})\citeM{i}{tanenbaum2011}{560}{560}.
 
-% ---------------------------------------------------------
-% 5. DIE ANWENDUNGSSCHICHT (Zusammenfassung)
-% ---------------------------------------------------------
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{tanenbaum_handshake.png}
+    \caption[TCP Three-Way-Handshake]{TCP Three-Way-Handshake \citeM{d}{tanenbaum2011}{561}{561}}\label{fig:tcp_handshake}
+    \label{fig:tanenbaum_handshake}
+\end{figure}
+
 \subsection{Sitzungsschicht (Schicht 5)}
+
+Die Sitzungsschicht (Session Layer) ermöglicht es Kommunikationspartnern auf verschiedenen Systemen, Sitzungen (Sessions) miteinander aufzubauen und zu verwalten. Eine solche Sitzung bietet erweiterte Dienste, die über die reine Transportverbindung hinausgehen. Dazu gehört beispielsweise die Dialogsteuerung, welche regelt, welche Seite zu einem bestimmten Zeitpunkt senden darf. Ein weiterer wichtiger Aspekt ist die Synchronisation: Durch das Einfügen von Prüfpunkten (Checkpoints) in den Datenstrom wird sichergestellt, dass bei einem Verbindungsabbruch, etwa während eines großen Dateitransfers, die Übertragung an genau diesem Punkt fortgesetzt werden kann und nicht komplett von vorne beginnen muss \citeM{i}{tanenbaum2011}{44}{45}. Es sei angemerkt, dass die Funktionen der Sitzungsschicht in der Praxis häufig von den darüberliegenden Anwendungsschichten mitübernommen werden, weshalb sie in vielen modernen Protokollstapeln nicht explizit als eigenständige Schicht implementiert ist.
+
 \subsection{Darstellungsschicht (Schicht 6)}
+Im Gegensatz zu den tieferen Schichten, die sich primär auf den zuverlässigen Transport von Bitströmen konzentrieren, befasst sich die Darstellungsschicht (Presentation Layer) mit der Syntax und Semantik der übermittelten Informationen. Da verschiedene Endsysteme oft unterschiedliche interne Datenformate (wie beispielsweise unterschiedliche Zeichencodierungen) verwenden, oder abstrakte Datenformate beeinhalten, sorgt diese Schicht dafür, dass die Daten für die Anwendungsebene verständlich bleiben. Sie wandelt abstrakte Datenstrukturen in standardisierte Übertragungsformate um \citeM{i}{tanenbaum2011}{45}{45}.
+
 \subsection{Anwendungsschicht (Schicht 7)}
-% DEINE AUFGABE: Erkläre kurz, dass die Schichten 5 und 6 in der Praxis oft direkt von der Anwendung mitübernommen werden. 
-% PROJEKTBEZUG: Hier arbeiten eure eigentlichen Daten-Protokolle: MQTT für das Senden der Sensordaten und HTTP(S) für den Abruf des Grafana-Dashboards.
+Die Anwendungsschicht (Application Layer) bildet die oberste Ebene des \ac{OSI}-Modells. Sie stellt den Endanwendungen die eigentlichen Netzwerkdienste zur Verfügung und bildet die logische Schnittstelle zum Benutzer beziehungsweise zum Anwendungsprogramm. Auf dieser Schicht operieren zahlreiche etablierte Protokolle wie beispielsweise das \ac{HTTP} für die webbasierte Kommunikation, welches das bekannteste Protokoll auf dieser Schicht ist, jedoch gibt es noch zahlreiche weitere wie z.b. \ac{MQTT} oder \ac{DNS} \citeM{i}{tanenbaum2011}{45}{45}.
+
+\textbf{Einordnung im Projektkontext:}
+Auf der Anwendungsschicht kommen in dieser \ac{IoT}-Architektur zwei zentrale Protokolle zum Einsatz: 
+\begin{itemize}
+\item Grafana-Dashboard über \ac{HTTP} (Webbrowser).
+\item Sensordaten-Übertragung ESP32 $\rightarrow$ Raspberry Pi Broker über \ac{MQTT}.
+\end{itemize}
+Da \ac{MQTT} und \ac{HTTP} das Kernstück der Datenkommunikation darstellen, wird es in Kap.~\ref{sec:MQTT und HTTP} detailliert behandelt.
 
 % ---------------------------------------------------------
 % 6. DER SCHWENK ZUM TCP/IP-MODELL
 % ---------------------------------------------------------
+
+
+
 \subsection{Einordnung in das TCP/IP-Referenzmodell}
-Bild aus Tanenbaum Seite 46. Und erklärung.
+Ein weiteres Referenzmodell, welches in der Praxis weitaus häufiger zur Beschreibung von Netzwerkprotokollen herangezogen wird, ist das TCP/IP-Modell. Es wurde ursprünglich vom DoD (U.S. Department of Defense) entwickelt und bildet die Grundlage für die heutige Internetkommunikation. Im Vergleich zum \ac{OSI}-Modell ist das TCP/IP-Modell deutlich pragmatischer und weniger theoretisch, da es direkt auf den tatsächlich implementierten Protokollen basiert. Es besteht aus vier Schichten: Link Layer, Internet Layer, Transport Layer und Application Layer.
+
+\begin {figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{tcp_osi.png}
+    \caption[Vergleich OSI- und TCP/IP-Modell]{Vergleich der OSI- und TCP/IP-Schichten \citeM{d}{tanenbaum2011}{46}{46}}\label{fig:osi_tcpip}
+\end{figure}
+
+In der Abbildung \ref{fig:osi_tcpip} ist die grobe Zuordnung der OSI-Schichten zu den TCP/IP-Schichten dargestellt. Es ist jedoch wichtig zu betonen, dass diese Zuordnung nicht immer eindeutig ist, da viele Protokolle Funktionen über mehrere Schichten hinweg übernehmen können \citeM{i}{tanenbaum2011}{46}{51}.
+
+\textbf{Einordnung der TCP/IP-Schichten im vorliegenden Projekt:}
+\begin{itemize}
+    \item \textbf{Netzzugangsschicht (Link Layer):} Auf dieser Ebene operiert die physikalische Hardware, wie das WLAN-Modul des ESP32 sowie die virtuellen Netzwerkbrücken (Docker-Bridge) auf dem Raspberry Pi.
+    \item \textbf{Internetschicht (Internet Layer):} Hier kommt das IP-Protokoll zum Einsatz, welches das Routing der Datenpakete vom Mikrocontroller zum Raspberry Pi sowie zwischen den isolierten Docker-Containern übernimmt.
+    \item \textbf{Transportschicht (Transport Layer):} Diese Schicht wird durch das TCP-Protokoll abgebildet, welches eine zuverlässige und verlustfreie Ende-zu-Ende-Verbindung für die Sensordaten garantiert.
+    \item \textbf{Anwendungsschicht (Application Layer):} Auf der obersten Ebene arbeiten die eigentlichen Projektdienste, primär \ac{MQTT} für die Übermittlung der Telemetriedaten sowie HTTP für den Abruf des Grafana-Dashboards.
+\end{itemize}
+
 
 
 \section{MQTT und HTTP}
@@ -128,3 +156,6 @@ Wie kommunizieren Docker-Container? Erklärung des virtuellen Switches (docker0)
 
 \section{Tunneling und Reverse Proxies (Cloudflare Tunnel)}
 Die Theorie, wie man ein lokales Netzwerk sicher ins Internet bringt. Erklärung, dass der Tunnel von innen nach außen aufgebaut wird, wodurch man NAT-Firewalls am Router umgeht, ohne Ports öffnen zu müssen.
+
+\section{SSH}
+Zum Zugriff auf die Kommandozeile des Raspberry Pi von außerhalb des lokalen Netzwerks. Mit Paaswort und User anmelden, muss im gleichen Netzwerk sein, um Zugriff zu bekommen, da der Pi nicht direkt über das Internet erreichbar ist.

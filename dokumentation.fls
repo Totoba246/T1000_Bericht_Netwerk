@@ -761,6 +761,15 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmro12.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT ./images/tanenbaum_handshake.png
+INPUT ./images/tanenbaum_handshake.png
+INPUT ./images/tanenbaum_handshake.png
+INPUT ./images/tanenbaum_handshake.png
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT ./images/tcp_osi.png
+INPUT ./images/tcp_osi.png
+INPUT ./images/tcp_osi.png
+INPUT ./images/tcp_osi.png
 INPUT ./content/03kapitel.tex
 INPUT ./content/03kapitel.tex
 INPUT ./content/03kapitel.tex
@@ -770,7 +779,6 @@ INPUT ./images/circuit_image.png
 INPUT ./images/circuit_image.png
 INPUT ./images/circuit_image.png
 INPUT ./images/circuit_image.png
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT ./content/04kapitel.tex
 INPUT ./content/04kapitel.tex
 INPUT ./content/04kapitel.tex

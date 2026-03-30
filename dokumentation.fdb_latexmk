@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex dokumentation"] 1774850053.12265 "dokumentation.aux" "dokumentation.bbl" "dokumentation" 1774850078.1687 0
-  "./dokumentation-blx.bib" 1774850071 342 20d1170ef6c1d70c658d70e011e08dba ""
+["bibtex dokumentation"] 1774867817.55216 "dokumentation.aux" "dokumentation.bbl" "dokumentation" 1774868935.3029 0
+  "./dokumentation-blx.bib" 1774868927 342 20d1170ef6c1d70c658d70e011e08dba ""
   "./quellen.bib" 1774846892 5074 cebabc23e475c4f1a9512948b82829ea ""
   "c:/texlive/2025/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1761757518 65510 9a2a51799b543ff279b8ea2dd91ec499 ""
-  "dokumentation.aux" 1774850071 31856 6e79a2b1e44f3438e06af47ba851afde "pdflatex"
+  "dokumentation.aux" 1774868927 34503 a5300656ffa82fcf6a419beff5a531f1 "pdflatex"
   (generated)
   "dokumentation.bbl"
   "dokumentation.blg"
   (rewritten before read)
-["cusdep glo gls dokumentation"] 1774849214.72762 "dokumentation.glo" "dokumentation.gls" "dokumentation" 1774850078.16635 0
-  "dokumentation.glo" 1774850066 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["cusdep glo gls dokumentation"] 1774866437.35718 "dokumentation.glo" "dokumentation.gls" "dokumentation" 1774868935.30074 0
+  "dokumentation.glo" 1774868921 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "dokumentation.gls"
   (rewritten before read)
-["pdflatex"] 1774850054.86587 "c:/Users/totob/Documents/Studium/T1000/T1000_Bericht_Netwerk/dokumentation.tex" "dokumentation.pdf" "dokumentation" 1774850078.17345 0
-  "ads/acronyms.tex" 1774849162 1592 e984ed959045c8a1d5036f76f4d332e4 ""
+["pdflatex"] 1774868909.29279 "c:/Users/totob/Documents/Studium/T1000/T1000_Bericht_Netwerk/dokumentation.tex" "dokumentation.pdf" "dokumentation" 1774868935.30693 0
+  "ads/acronyms.tex" 1774862098 1716 c9bcd5b3a177b5a97c1c90651fc2e5ea ""
   "ads/appendix.tex" 1774846892 4441 5fedea452e70e5b5c4428a3d1d8f2170 ""
   "ads/deckblatt.tex" 1774846892 1229 54177279c79939659abdb71830403917 ""
   "ads/einstellungen_liste.tex" 1774846892 543 68240c64f3bb48f50cbd7753cdbe47a8 ""
@@ -389,23 +389,25 @@
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761765827 3629593 1c9981d15fe75a561fee0a6899201708 ""
   "c:/texlive/2025/texmf.cnf" 1761765377 713 e69b156964470283e0530f5060668171 ""
   "content/01kapitel.tex" 1774846892 655 16ffcaea1e5b8fcee65df0b23e9a04af ""
-  "content/02kapitel.tex" 1774849162 15775 269347cecc6c700f5849794ce11d1f3d ""
-  "content/03kapitel.tex" 1774850026 3533 165660e49bb2131a672c01738e9c11b6 ""
-  "content/04kapitel.tex" 1774850026 1179 f75f1946c772770d3cad41b7de823ee9 ""
-  "content/05kapitel.tex" 1774850026 854 6adca00aea4524839466f12c22616058 ""
+  "content/02kapitel.tex" 1774868906 20008 fa7d9a9b11cb78baea8e70ad3eb8608d ""
+  "content/03kapitel.tex" 1774856529 4296 b43bc3b96f07bd45504b3b9aa3195403 ""
+  "content/04kapitel.tex" 1774856529 1136 79d48b5ac065888b5e1da877d09d1b02 ""
+  "content/05kapitel.tex" 1774856529 810 a96f81f65ffdba5ba7fe080bc8c2e56c ""
   "content/06kapitel.tex" 1774846892 371 81fc56e28421f90ac177edca45dd54aa ""
-  "dokumentation.aux" 1774850071 31856 6e79a2b1e44f3438e06af47ba851afde "pdflatex"
-  "dokumentation.bbl" 1774850054 3187 576b9e0a22caa68e5b538ed1506dbba8 "bibtex dokumentation"
-  "dokumentation.gls" 1774849216 7 9f404503043ec80c08484be9f659189e "cusdep glo gls dokumentation"
-  "dokumentation.lof" 1774850071 889 3122eb0b3ddbcff7b7c26f6c11a27948 "pdflatex"
-  "dokumentation.run.xml" 1774850071 2702 6917659925b8856ae5dd206f3151d509 "pdflatex"
+  "dokumentation.aux" 1774868927 34503 a5300656ffa82fcf6a419beff5a531f1 "pdflatex"
+  "dokumentation.bbl" 1774867819 3187 576b9e0a22caa68e5b538ed1506dbba8 "bibtex dokumentation"
+  "dokumentation.gls" 1774866438 7 9f404503043ec80c08484be9f659189e "cusdep glo gls dokumentation"
+  "dokumentation.lof" 1774868927 1106 4abfeb93d8adc70a427cd8df3e17e0c1 "pdflatex"
+  "dokumentation.run.xml" 1774868927 2702 74db5002c3e48a827363426857fcfee1 "pdflatex"
   "dokumentation.tex" 1774846892 2546 46790d405d5200db54ce71fa1f2b7585 ""
-  "dokumentation.toc" 1774850071 4095 d66df94442a3f1cde3e8340d8422907f "pdflatex"
+  "dokumentation.toc" 1774868927 4245 583cd310e721451aabfa1b80db297b38 "pdflatex"
   "einstellungen.tex" 1774846892 5621 ba9206ff5bea52d6599e560c80f65d51 ""
   "images/Luftfeuchtigkeitsmessreihe.png" 1774846892 28077 263a1c6451b198c1e30245db5c3516df ""
   "images/ausschnitt_Taupunkttabelle.png" 1774846892 50847 a7c0f53e88f6e253448cb9e6e8389dc5 ""
   "images/circuit_image.png" 1774846892 432856 5dd93d16e2c7b75bde435de3500669e2 ""
   "images/dhbw.png" 1774846892 28036 72715f284b6ae369970da384742d8059 ""
+  "images/tanenbaum_handshake.png" 1774856681 49439 b6f317202b482e65fb21ba31fe0b51b3 ""
+  "images/tcp_osi.png" 1774862061 50803 cd6386019cff966f140af175fdf24e21 ""
   "lang/de.tex" 1774846892 817 f9e731463689c3f6eadaf84e0d5d3bdd ""
   "lang/strings.tex" 1774846892 582 a13fe3348432a6ed15fff61cda22a2e4 ""
   (generated)

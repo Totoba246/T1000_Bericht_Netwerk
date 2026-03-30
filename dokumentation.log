@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.29)  30 MAR 2026 07:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.29)  30 MAR 2026 13:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1810,7 +1810,7 @@ Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [3{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 Package acronym Info: Label `acro:ACK' newly defined as it shall be overridden
-although it is yet undefined on input line 58.
+although it is yet undefined on input line 55.
 
 
 
@@ -1818,9 +1818,9 @@ Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [4]
 Package acronym Info: Label `acro:CSMA/CA' newly defined as it shall be overridden
-although it is yet undefined on input line 64.
+although it is yet undefined on input line 61.
 
-Overfull \hbox (7.2652pt too wide) in paragraph at lines 64--65
+Overfull \hbox (7.2652pt too wide) in paragraph at lines 61--62
 \T1/lmr/m/n/12 (-20) Teilschicht das Pro-to-koll [][][]Carrier Sen-se Mul-ti-ple Ac-cess with Col-li-si-on Avoi-dance ([])[]
  []
 
@@ -1831,13 +1831,9 @@ Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [5]
 Package acronym Info: Label `acro:UDP' newly defined as it shall be overridden
-although it is yet undefined on input line 90.
+although it is yet undefined on input line 82.
 Package acronym Info: Label `acro:TCP' newly defined as it shall be overridden
-although it is yet undefined on input line 90.
-
-
-LaTeX Warning: Citation 'tanenbaum' on page 6 undefined on input line 93.
-
+although it is yet undefined on input line 82.
 
 
 
@@ -1845,53 +1841,83 @@ Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [6]
 Package acronym Info: Label `acro:MQTT' newly defined as it shall be overridden
-although it is yet undefined on input line 96.
-
-
-LaTeX Warning: Reference `fig:tcp_handshake' on page 7 undefined on input line 101.
-
+although it is yet undefined on input line 88.
+<images/tanenbaum_handshake.png, id=296, 618.81187pt x 605.26125pt>
+File: images/tanenbaum_handshake.png Graphic file (type png)
+<use images/tanenbaum_handshake.png>
+Package pdftex.def Info: images/tanenbaum_handshake.png  used on input line 97.
+(pdftex.def)             Requested size: 182.09488pt x 178.10721pt.
 
 
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [7]) (./content/03kapitel.tex
+ [7 <./images/tanenbaum_handshake.png>]
+Package acronym Info: Label `acro:HTTP' newly defined as it shall be overridden
+although it is yet undefined on input line 110.
+Package acronym Info: Label `acro:DNS' newly defined as it shall be overridden
+although it is yet undefined on input line 110.
+
 
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
  [8]
+
+LaTeX Warning: Reference `sec:MQTT und HTTP' on page 9 undefined on input line 118.
+
+<images/tcp_osi.png, id=323, 581.7735pt x 346.29375pt>
+File: images/tcp_osi.png Graphic file (type png)
+<use images/tcp_osi.png>
+Package pdftex.def Info: images/tcp_osi.png  used on input line 131.
+(pdftex.def)             Requested size: 364.19672pt x 216.78708pt.
+
+
+
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+ [9 <./images/tcp_osi.png>]
+Overfull \hbox (0.41739pt too wide) in paragraph at lines 141--142
+[]\T1/lmr/bx/n/12 (-20) Transportschicht (Trans-port Layer): \T1/lmr/m/n/12 (-20) Die-se Schicht wird durch das TCP-Protokoll
+ []
+
+) (./content/03kapitel.tex
+
+
+Overfull \vbox (7.89444pt too high) has occurred while \output is active []
+
+ [10]
 chapter 3.
-<images/circuit_image.png, id=287, 479.391pt x 434.8245pt>
+<images/circuit_image.png, id=338, 479.391pt x 434.8245pt>
 File: images/circuit_image.png Graphic file (type png)
 <use images/circuit_image.png>
 Package pdftex.def Info: images/circuit_image.png  used on input line 33.
 (pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
 
 
-[9
+[11
 
 ]
 
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [10 <./images/circuit_image.png>]) (./content/04kapitel.tex
+ [12 <./images/circuit_image.png>]) (./content/04kapitel.tex
 
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [11]
+ [13]
 chapter 4.
 ) (./content/05kapitel.tex
 
-[12
+[14
 
 ]
 chapter 5.
 ) (./content/06kapitel.tex
 
-[13
+[15
 
 ]
 chapter 6.
@@ -1902,7 +1928,7 @@ Overfull \hbox (62.00821pt too wide) in paragraph at lines 7--109
 
 
 
-[14
+[16
 
 ]
 chapter without number
@@ -1924,7 +1950,7 @@ Overfull \hbox (13.39139pt too wide) in paragraph at lines 115--115
 
 (./dokumentation.gls) (./ads/appendix.tex
 
-[15
+[17
 
 
 
@@ -1932,24 +1958,24 @@ Overfull \hbox (13.39139pt too wide) in paragraph at lines 115--115
 chapter without number
 
 
-[16
+[18
 
 ]
 
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [17]
+ [19]
 
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [18]
+ [20]
 File: images/circuit_image.png Graphic file (type png)
 <use images/circuit_image.png>
 Package pdftex.def Info: images/circuit_image.png  used on input line 122.
 (pdftex.def)             Requested size: 479.38983pt x 434.82341pt.
-<images/Luftfeuchtigkeitsmessreihe.png, id=431, 284.262pt x 272.81924pt>
+<images/Luftfeuchtigkeitsmessreihe.png, id=481, 284.262pt x 272.81924pt>
 File: images/Luftfeuchtigkeitsmessreihe.png Graphic file (type png)
 <use images/Luftfeuchtigkeitsmessreihe.png>
 Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input line 130.
@@ -1959,7 +1985,7 @@ Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [19]
+ [21]
 File: images/Luftfeuchtigkeitsmessreihe.png Graphic file (type png)
 <use images/Luftfeuchtigkeitsmessreihe.png>
 Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input line 139.
@@ -1969,8 +1995,8 @@ Package pdftex.def Info: images/Luftfeuchtigkeitsmessreihe.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [20 <./images/Luftfeuchtigkeitsmessreihe.png>]
-<images/ausschnitt_Taupunkttabelle.png, id=451, 464.937pt x 105.996pt>
+ [22 <./images/Luftfeuchtigkeitsmessreihe.png>]
+<images/ausschnitt_Taupunkttabelle.png, id=502, 464.937pt x 105.996pt>
 File: images/ausschnitt_Taupunkttabelle.png Graphic file (type png)
 <use images/ausschnitt_Taupunkttabelle.png>
 Package pdftex.def Info: images/ausschnitt_Taupunkttabelle.png  used on input line 147.
@@ -1980,7 +2006,7 @@ Package pdftex.def Info: images/ausschnitt_Taupunkttabelle.png  used on input li
 
 Overfull \vbox (7.89444pt too high) has occurred while \output is active []
 
- [21 <./images/ausschnitt_Taupunkttabelle.png>])
+ [23 <./images/ausschnitt_Taupunkttabelle.png>])
 No complaints by nag.
 (./dokumentation.aux)
  ***********
@@ -1991,28 +2017,23 @@ L3 programming layer <2025-10-24>
 
 LaTeX Warning: There were undefined references.
 
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                dokumentation
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'dokumentation.run.xml'.
 \openout1 = `dokumentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 64197 strings out of 467747
- 1432735 string characters out of 5431120
- 2941084 words of memory out of 5000000
- 91476 multiletter control sequences out of 15000+600000
- 705802 words of font info for 164 fonts, out of 8000000 for 9000
+ 64252 strings out of 467747
+ 1433696 string characters out of 5431120
+ 2941495 words of memory out of 5000000
+ 91513 multiletter control sequences out of 15000+600000
+ 706184 words of font info for 168 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  120i,10n,134p,11296b,3440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on dokumentation.pdf (28 pages, 851632 bytes).
+Output written on dokumentation.pdf (30 pages, 929874 bytes).
 PDF statistics:
- 694 PDF objects out of 1000 (max. 8388607)
- 605 compressed objects within 7 object streams
- 206 named destinations out of 1000 (max. 500000)
- 48109 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 751 PDF objects out of 1000 (max. 8388607)
+ 654 compressed objects within 7 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 48135 words of extra memory for PDF output out of 51595 (max. 10000000)
 
