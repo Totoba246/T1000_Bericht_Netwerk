@@ -1,7 +1,7 @@
 \chapter{Kritische Betrachtung und Evaluation}
 
 \section{Evaluation der autarken WLAN-Infrastruktur}
-Die Hotspot-Story aus der Praxis! Pi wurde per NetworkManager zum Access Point gemacht. Problem: Sende-Modus zieht zu viel Strom -> Undervolting -> Hardware stürzt ab. Fallback auf den iPhone-Hotspot.
+Die Hotspot-Story aus der Praxis! Pi wurde per NetworkManager zum Access Point gemacht. Problem: Sende-Modus zieht zu viel Strom -> Undervolting -> Hardware stürzt ab. Fallback auf den iPhone-Hotspot. Dann nochmal probiert mit anderem Netzteil. Bei realanwendung auf nötige Stromversorgung achten, um kontinuirichen Betrieb zu gewährleisten.
 
 \section{Analyse von TCP-Verbindungsabbrüchen}
-Hier kannst du super dein Wissen aus dem Theorieteil anwenden! Diagnose des errno: 104 "Connection reset by peer" Fehlers. Wie ihr analysiert habt, dass die TCP-Verbindung auf unterster Ebene vom Host (Pi) abgelehnt wurde, weil der Broker-Container sich in einer Neustart-Schleife befand.
+Hier kannst du super dein Wissen aus dem Theorieteil anwenden! Diagnose des errno: 104 "Connection reset by peer" Fehlers. Wie ihr analysiert habt, dass die TCP-Verbindung auf unterster Ebene vom Host (Pi) abgelehnt wurde, weil der Broker-Container sich in einer Neustart-Schleife befand, durch komische Passwort Datei, die sich da reingemogelt hatte.

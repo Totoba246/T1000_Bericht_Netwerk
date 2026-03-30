@@ -49,6 +49,9 @@ Optional können die Daten über die Weboberfläche dargestellt
 werden, um die Genauigkeit des Sensors für Anwendungen wie 
 Defogging-Systeme zu beurteilen.
 
+\section{Aufbau des Gesamten Systems}
+Jeder hat seinen Sensor aufgebaut (Abstand, Wasser, Wasser, DHT11), diese sind über WLAN mit dem Raspberry Pi verbunden, der als zentraler Server fungiert. Der Pi wird nur mit einem Stromkabel an den Strom angeschlossen.
 
-
+\section{Der Plan}
+Zuerst war das ziel erstmal nur die Daten an den Pi zu senden, dafür sollten die Sensoren per MQTT die DAten an den Pi senden. Dann haben wir ertsmal die nötigen Docker auf dem Pi installiert, und die Skripte für die Sensoren angepasst, als diese gesendet haben, haben wir die Daten in der InfluxDB gespeichert, und mit Grafana visualisiert. Dann wollten wir die Daten auch von außerhalb des lokalen Netzwerks zugänglich machen, dafür haben wir den Cloudflare Tunnel eingerichtet, damit wir https nutzen konnten, da unser nächstes Ziel die Sicherheit des Systems war, dafür haben wir auch die nötigen Berechtigungen und API-Keys in der .yaml Datei für Docker übergeben, damit die Container untereinander kommunizieren können, ohne dass Daten das virtuelle docker0-Netz verlassen müssen. Zum Schluss wollten wir den Pi auch als WLAN-Access Point nutzen, damit die Sensoren sich direkt mit dem Pi verbinden können, ohne dass ein externes WLAN benötigt wird.
 
